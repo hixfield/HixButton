@@ -5,7 +5,6 @@
 #include <ArduinoOTA.h>
 #include <FS.h>
 #include <HixTimeout.h>
-#include <MHZ19.h>
 #include <SoftwareSerial.h>
 
 // runtime global variables
