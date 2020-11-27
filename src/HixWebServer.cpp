@@ -84,12 +84,15 @@ bool HixWebServer::handleFileRead(String path) {
 
 bool HixWebServer::handlePostConfig(void) {
     //check password
-    if (arg("password") != Secret::CONFIGPWD) {
+    if (arg("password") != m_config.getConfigPassword()) {
         send(400, "text/plain", "Bad password");
         return false;
     }
     //handle parameters
+    //TODO add other variables
+    /*
     if (hasArg("mqtt_server")) m_config.setMQTTServer(arg("mqtt_server").c_str());
+    */
     if (hasArg("room")) m_config.setRoom(arg("room").c_str());
     if (hasArg("device_tag")) m_config.setDeviceTag(arg("device_tag").c_str());
     m_config.setOTAEnabled(hasArg("ota_enabled"));

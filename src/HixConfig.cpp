@@ -10,9 +10,8 @@ HixConfig::HixConfig() {
     }
 }
 
-const char * HixConfig::getMQTTServer(void) {
-    //    return "192.168.99.219";
-    return data.szMQTTServer;
+const char * HixConfig::getUDPServer(void) {
+    return data.szUDPServer;
 };
 
 const char * HixConfig::getRoom(void) {
@@ -29,9 +28,9 @@ bool HixConfig::getOTAEnabled(void) {
     return data.bOTAEnabled;
 }
 
-void HixConfig::setMQTTServer(const char * szValue) {
-    memset(data.szMQTTServer, 0, sizeof(data.szMQTTServer));
-    strncpy(data.szMQTTServer, szValue, sizeof(data.szMQTTServer) - 1);
+void HixConfig::setUDPServer(const char * szValue) {
+    memset(data.szUDPServer, 0, sizeof(data.szUDPServer));
+    strncpy(data.szUDPServer, szValue, sizeof(data.szUDPServer) - 1);
 }
 
 void HixConfig::setRoom(const char * szValue) {
@@ -65,18 +64,27 @@ unsigned long HixConfig::calculateCRC(void) {
 }
 
 void HixConfig::commitDefaults(void) {
-    setMQTTServer(Secret::MQTT_SERVER);
+    setMyIPAddress(Secret::MY_IP);
+    setMySubnetMask(Secret::MY_MASK);
+    setMyGateway(Secret::MY_GATEWAY);
+    setOTAEnabled(true);
     setRoom("test_room");
     setDeviceTag("test_tag");
-    setOTAEnabled(true);
+    setUDPServer(Secret::UDP_SERVER);
+    setUDPPort(Secret::UDP_PORT);
     commitToEEPROM();
 }
 
 void HixConfig::replacePlaceholders(String & contents) {
-    contents.replace("||MQTT_SERVER||", getMQTTServer());
-    contents.replace("||ROOM||", getRoom());
-    contents.replace("||DEVICE_TAG||", getDeviceTag());
-    contents.replace("||DEVICE_TYPE||", getDeviceType());
-    contents.replace("||DEVICE_VERSION||", getDeviceVersion());
+    contents.replace("||WIFI_SSID||", getWifiSsid());
+    contents.replace("||WIFI_PWD||", getWifiPassword());
+    contents.replace("||MY_IP||", getMyIPAddress());
+    contents.replace("||MY_MASK||", getMySubnetMask());
+    contents.replace("||MY_GATEWAY||", getMyGateway());
     contents.replace("||OTA_ENABLED||", getOTAEnabled()? "checked":"");    
+    contents.replace("||MY_ROOM||", getRoom());
+    contents.replace("||MY_DEVICE_TAG||", getDeviceTag());
+    contents.replace("||UDP_SERVER||", getUDPServer());
+    contents.replace("||UDP_PORT||", String(getUDPPort()));
+    contents.replace("||CONFIG_PWD||", getConfigPassword());
 }
