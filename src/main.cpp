@@ -20,16 +20,18 @@ HixPinDigitalInput g_pinStayAwake(4);
 WiFiUDP g_udp;
 Adafruit_NeoPixel g_rgbLed = Adafruit_NeoPixel(1, 5, NEO_GRB + NEO_KHZ400);
 
-enum Color : uint32_t {
-    black  = 0x000000,
-    white  = 0xFFFFFF,
-    red    = 0xFF0000,
-    green  = 0x00FF00,
-    blue   = 0x0000FF,
+enum Color : uint32_t
+{
+    black = 0x000000,
+    white = 0xFFFFFF,
+    red = 0xFF0000,
+    green = 0x00FF00,
+    blue = 0x0000FF,
     orange = 0xFF8C00
 };
 
-void setLedColor(Color color, u32_t nDimFactor = 16) {
+void setLedColor(Color color, u32_t nDimFactor = 16)
+{
     //make base colors
     u32_t nR = color >> 16;
     u32_t nG = (color & 0x00FF00) >> 8;
@@ -122,6 +124,22 @@ void sendUDPpacket()
     Serial.println(jsonString);
 }
 
+void setLedForVcc()
+{
+    float vcc = getVcc();
+    if (vcc < 2.60)
+    {
+        setLedColor(Color::red);
+        return;
+    }
+    if (vcc < 2.8)
+    {
+        setLedColor(Color::orange);
+        return;
+    }
+    setLedColor(Color::green);
+}
+
 // ===================================================================================
 // note that there is no WiFi.begin() in the setup.
 // It IS accessed in a function the 1st time the sketch is run
@@ -174,6 +192,8 @@ void setup(void)
     Serial.println(F("Setting up SPIFFS"));
     if (!SPIFFS.begin())
         resetWithMessage("SPIFFS initialization failed, resetting");
+    //show led color
+    setLedForVcc();
     //give some time for message sending in background
     delay(1250);
 }
@@ -186,11 +206,14 @@ void loop(void)
     if (g_pinStayAwake.isHigh())
     {
         g_webServer.handleClient();
+        setLedForVcc();
     }
     else
     {
         //debug log
         Serial.println("Going to sleep...");
+        //switch off let
+        setLedColor(Color::black);
         //go into deepsleep!
         ESP.deepSleep(0);
     }
