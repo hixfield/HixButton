@@ -46,7 +46,7 @@ bool HixWebServer::shouldReplacePlaceholders(String filename) {
 
 // send the right file to the client (if it exists)
 bool HixWebServer::handleFileRead(String path) {
-    char buf[1024];
+    char buf[2500];
     Serial.println("handleFileRead: " + path);
     //check for postback of config data
     if (path.endsWith("/postconfig")) {
@@ -93,9 +93,17 @@ bool HixWebServer::handlePostConfig(void) {
     /*
     if (hasArg("mqtt_server")) m_config.setMQTTServer(arg("mqtt_server").c_str());
     */
+    if (hasArg("wifi_ssid")) m_config.setWifiSsid(arg("wifi_ssid").c_str());
+    if (hasArg("wifi_pwd")) m_config.setWifiPassword(arg("wifi_pwd").c_str());
+    m_config.setFixedIPEnabled(hasArg("fixed_ip_enabled"));
+    if (hasArg("ip")) m_config.setIPAddress(arg("ip").c_str());
+    if (hasArg("mask")) m_config.setSubnetMask(arg("mask").c_str());
+    if (hasArg("gateway")) m_config.setGateway(arg("gateway").c_str());
+    m_config.setOTAEnabled(hasArg("ota_enabled"));
     if (hasArg("room")) m_config.setRoom(arg("room").c_str());
     if (hasArg("device_tag")) m_config.setDeviceTag(arg("device_tag").c_str());
-    m_config.setOTAEnabled(hasArg("ota_enabled"));
+    if (hasArg("udp_server")) m_config.setUDPServer(arg("udp_server").c_str());
+    if (hasArg("udp_port")) m_config.setUDPPort(arg("udp_port").toInt());
     //write to epprom
     m_config.commitToEEPROM();
     //send reply
@@ -103,6 +111,8 @@ bool HixWebServer::handlePostConfig(void) {
     File file = SPIFFS.open(szSavedHtml, "r");
     streamFile(file, getContentType(String(szSavedHtml)));
     file.close();
+    //errase wifi settings
+    WiFi.disconnect();
     //reset!
     delay(1000);
     ESP.reset();

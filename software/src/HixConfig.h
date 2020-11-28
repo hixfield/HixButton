@@ -13,13 +13,14 @@ private:
   struct
   {
     //overall settings
+    char szConfigPassword[50];
     char szWifiSsid[50];
     char szWifiPassword[50];
+    bool bFixedIPEnabled;
     char szIPAddress[50];
     char szSubnetMask[50];
     char szGateway[50];
     bool bOTAEnabled;
-    char szConfigPassword[50];
     //my location stuff
     char szRoom[50];
     char szDeviceTag[50];
@@ -40,8 +41,10 @@ public:
   const char *getDeviceType(void) { return "HixButton"; };
   const char *getDeviceVersion(void) { return "1.0.0"; };
 
+  const char *getConfigPassword(void);
   const char *getWifiSsid(void);
   const char *getWifiPassword(void);
+  bool getFixedIPEnabled(void);
   const char *getIPAddressAsString(void);
   IPAddress getIPAddress(void);
   const char *getSubnetMaskAsString(void);
@@ -49,7 +52,6 @@ public:
   const char *getGatewayAsString(void);
   IPAddress getGateway(void);
   bool getOTAEnabled(void);
-  const char *getConfigPassword(void);
 
   const char *getRoom(void);
   const char *getDeviceTag(void);
@@ -58,13 +60,14 @@ public:
   int getUDPPort(void);
 
   //setters
+  void setConfigPassword(const char *szValue);
   void setWifiSsid(const char *szValue);
   void setWifiPassword(const char *szValue);
+  void setFixedIPEnabled(bool bValue);
   void setIPAddress(const char *szValue);
   void setSubnetMask(const char *szValue);
   void setGateway(const char *szValue);
   void setOTAEnabled(bool bValue);
-  void setConfigPassword(const char *szValue);
 
   void setRoom(const char *szValue);
   void setDeviceTag(const char *szValue);

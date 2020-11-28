@@ -10,13 +10,33 @@
                 <td><input type="password" name="password" value=""></td>
             </tr>
             <tr>
-                <td>UDP Server</td>
-                <td><input type="text" name="udp_server" value="||UDP_SERVER||"> </td>
+                <td>WiFi SSID</td>
+                <td><input type="text" name="wifi_ssid" value="||WIFI_SSID||"> </td>
             </tr>
             <tr>
-                <td>UDP Port</td>
-                <td><input type="text" name="udp_port" value="||UDP_PORT||"> </td>
+                <td>WiFi Password</td>
+                <td><input type="text" name="wifi_pwd" value="||WIFI_PWD||"> </td>
             </tr>
+            <tr>
+                <td>use fixed IP address</td>
+                <td><input type="checkbox" name="fixed_ip_enabled" value="true" ||FIXED_IP_ENABLED||></td>
+            </tr>   
+            <tr>
+                <td>fixed IP address</td>
+                <td><input type="text" name="ip" value="||IP||"> </td>
+            </tr>
+            <tr>
+                <td>fixed IP address mask</td>
+                <td><input type="text" name="mask" value="||MASK||"> </td>
+            </tr>
+            <tr>
+                <td>fixed IP address gateway</td>
+                <td><input type="text" name="gateway" value="||GATEWAY||"> </td>
+            </tr>
+            <tr>
+                <td>OTA enabled</td>
+                <td><input type="checkbox" name="ota_enabled" value="true" ||OTA_ENABLED||></td>
+            </tr>   
             <tr>
                 <td>Room</td>
                 <td><input type="text" name="room" value="||ROOM||"> </td>
@@ -26,9 +46,13 @@
                 <td><input type="text" name="device_tag" value="||DEVICE_TAG||"></td>
             </tr>
             <tr>
-                <td>OTA enabled</td>
-                <td><input type="checkbox" name="ota_enabled" value="true" ||OTA_ENABLED||></td>
-            </tr>            
+                <td>UDP Server</td>
+                <td><input type="text" name="udp_server" value="||UDP_SERVER||"> </td>
+            </tr>
+            <tr>
+                <td>UDP Port</td>
+                <td><input type="text" name="udp_port" value="||UDP_PORT||"> </td>
+            </tr>         
         </table>
         <br>
         <input type="submit" value="Submit">

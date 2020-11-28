@@ -12,9 +12,9 @@
             "type": "platformio-debug",
             "request": "launch",
             "name": "PIO Debug",
-            "executable": "/Users/geert/Documents/GitHub/HixButton/.pio/build/esp12e/firmware.elf",
+            "executable": "/Users/geertmichiels/Documents/HixField.com/HixButton/software/.pio/build/esp12e/firmware.elf",
             "projectEnvName": "esp12e",
-            "toolchainBinDir": "/Users/geert/.platformio/packages/toolchain-xtensa/bin",
+            "toolchainBinDir": "/Users/geertmichiels/.platformio/packages/toolchain-xtensa/bin",
             "preLaunchTask": {
                 "type": "PlatformIO",
                 "task": "Pre-Debug"
@@ -25,9 +25,9 @@
             "type": "platformio-debug",
             "request": "launch",
             "name": "PIO Debug (skip Pre-Debug)",
-            "executable": "/Users/geert/Documents/GitHub/HixButton/.pio/build/esp12e/firmware.elf",
+            "executable": "/Users/geertmichiels/Documents/HixField.com/HixButton/software/.pio/build/esp12e/firmware.elf",
             "projectEnvName": "esp12e",
-            "toolchainBinDir": "/Users/geert/.platformio/packages/toolchain-xtensa/bin",
+            "toolchainBinDir": "/Users/geertmichiels/.platformio/packages/toolchain-xtensa/bin",
             "internalConsoleOptions": "openOnSessionStart"
         }
     ]

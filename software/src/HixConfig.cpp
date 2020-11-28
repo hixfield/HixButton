@@ -10,12 +10,20 @@ HixConfig::HixConfig() {
     }
 }
 
+const char * HixConfig::getConfigPassword(void) {
+    return data.szConfigPassword;
+}
+
 const char * HixConfig::getWifiSsid(void) {
     return data.szWifiSsid;
 }
 
 const char * HixConfig::getWifiPassword(void) {
     return data.szWifiPassword;
+}
+
+bool HixConfig::getFixedIPEnabled(void) {
+    return data.bFixedIPEnabled;
 }
 
 IPAddress HixConfig::getIPAddress(void) {
@@ -52,10 +60,6 @@ bool HixConfig::getOTAEnabled(void) {
     return data.bOTAEnabled;
 }
 
-const char * HixConfig::getConfigPassword(void) {
-    return data.szConfigPassword;
-}
-
 const char * HixConfig::getRoom(void) {
     return data.szRoom;
 }
@@ -72,6 +76,11 @@ int HixConfig::getUDPPort(void) {
     return data.nUDPPort;
 }
 
+void HixConfig::setConfigPassword(const char * szValue) {
+    memset(data.szConfigPassword, 0, sizeof(data.szConfigPassword));
+    strncpy(data.szConfigPassword, szValue, sizeof(data.szConfigPassword) - 1);
+}
+
 void HixConfig::setWifiSsid(const char * szValue) {
     memset(data.szWifiSsid, 0, sizeof(data.szWifiSsid));
     strncpy(data.szWifiSsid, szValue, sizeof(data.szWifiSsid) - 1);
@@ -80,6 +89,10 @@ void HixConfig::setWifiSsid(const char * szValue) {
 void HixConfig::setWifiPassword(const char * szValue) {
     memset(data.szWifiPassword, 0, sizeof(data.szWifiPassword));
     strncpy(data.szWifiPassword, szValue, sizeof(data.szWifiPassword) - 1);
+}
+
+void HixConfig::setFixedIPEnabled(bool bValue) {
+    data.bFixedIPEnabled = bValue;
 }
 
 void HixConfig::setIPAddress(const char * szValue) {
@@ -99,11 +112,6 @@ void HixConfig::setGateway(const char * szValue) {
 
 void HixConfig::setOTAEnabled(bool bValue) {
     data.bOTAEnabled = bValue;
-}
-
-void HixConfig::setConfigPassword(const char * szValue) {
-    memset(data.szConfigPassword, 0, sizeof(data.szConfigPassword));
-    strncpy(data.szConfigPassword, szValue, sizeof(data.szConfigPassword) - 1);
 }
 
 void HixConfig::setRoom(const char * szValue) {
@@ -142,10 +150,14 @@ unsigned long HixConfig::calculateCRC(void) {
 }
 
 void HixConfig::commitDefaults(void) {
+    setConfigPassword(Secret::CONFIG_PWD);
+    setWifiSsid(Secret::WIFI_SSID);
+    setWifiPassword(Secret::WIFI_PWD);
+    setFixedIPEnabled(Secret::FIXED_IP_ENABLED);
     setIPAddress(Secret::MY_IP);
     setSubnetMask(Secret::MY_MASK);
     setGateway(Secret::MY_GATEWAY);
-    setOTAEnabled(true);
+    setOTAEnabled(Secret::OTA_ENABLED);
     setRoom("test_room");
     setDeviceTag("test_tag");
     setUDPServer(Secret::UDP_SERVER);
@@ -156,8 +168,12 @@ void HixConfig::commitDefaults(void) {
 void HixConfig::replacePlaceholders(String & contents) {
     contents.replace("||DEVICE_TYPE||", getDeviceType());
     contents.replace("||DEVICE_VERSION||", getDeviceVersion());
+
+    contents.replace("||CONFIG_PWD||", getConfigPassword());
+
     contents.replace("||WIFI_SSID||", getWifiSsid());
     contents.replace("||WIFI_PWD||", getWifiPassword());
+    contents.replace("||FIXED_IP_ENABLED||", getFixedIPEnabled()? "checked":"");    
     contents.replace("||IP||", getIPAddressAsString());
     contents.replace("||MASK||", getSubnetMaskAsString());
     contents.replace("||GATEWAY||", getGatewayAsString());
@@ -166,5 +182,4 @@ void HixConfig::replacePlaceholders(String & contents) {
     contents.replace("||DEVICE_TAG||", getDeviceTag());
     contents.replace("||UDP_SERVER||", getUDPServerAsString());
     contents.replace("||UDP_PORT||", String(getUDPPort()));
-    contents.replace("||CONFIG_PWD||", getConfigPassword());
 }

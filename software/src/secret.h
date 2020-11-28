@@ -6,10 +6,11 @@ class Secret
 public:
   static const char *WIFI_SSID;
   static const char *WIFI_PWD;
+  static const bool FIXED_IP_ENABLED;
   static const char *MY_IP;
   static const char *MY_MASK;
   static const char *MY_GATEWAY;
-  static const bool *OTA_ENABLED;
+  static const bool OTA_ENABLED;
   static const char *CONFIG_PWD;
 
   static const char *MY_ROOM;
