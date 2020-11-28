@@ -5,28 +5,26 @@
 #include <FS.h>
 #include <Arduino.h>
 #include <ArduinoJson.h>
-
-//#include "HixWebServer.h"
+#include <HixMQTTBase.h>
+#include <HixPinDigitalInput.h>
+#include "HixWebServer.h"
 #include "secret.h"
 #include "HixConfig.h"
 
 ADC_MODE(ADC_VCC);
 
-// ---------------------------------------------------------
+HixConfig g_config;
+HixWebServer g_webServer(g_config);
+HixPinDigitalInput g_pinStayAwake(4);
+WiFiUDP g_udp;
 
-// change to suit your local network
-#define IPA IPAddress(192, 168, 99, 5)
-#define GATE IPAddress(192, 168, 99, 1)
-#define MASK IPAddress(255, 255, 255, 0)
 
-// address of a UDP listener on the same network
-char UDPtarget[] = {"192.168.99.4"}; // **
-const uint16_t udpPort = 63001;      // ** UDP port number
-const String UDPtestMessage = "Hi, this is a test message by UDP";
+void resetWithMessage(const char * szMessage) {
+    Serial.println(szMessage);
+    delay(2000);
+    ESP.reset();
+}
 
-WiFiUDP udp;
-
-// ------------------------------------------------------------------------------------------
 // this is accessed when the initial run fails to connect because no (or old) credentials
 void launchSlowConnect()
 {
@@ -54,26 +52,11 @@ void launchSlowConnect()
         Serial.print(".");
         if (++counter > 20)
         { // allow up to 10-sec to connect to wifi
-            Serial.println("wifi timed-out. Rebooting..");
-            delay(10); // so the serial message has time to get sent
-            ESP.restart();
+            resetWithMessage("WIFI timed-out, resetting...");
         }
     }
 
     Serial.println("WiFi connected and credentials saved");
-}
-
-void sendUDPpacket()
-{
-    Serial.print("sending UDP packet to ");
-    Serial.print(UDPtarget);
-    Serial.print(" on port ");
-    Serial.print(udpPort);
-    udp.beginPacket(UDPtarget, udpPort);
-    udp.print(UDPtestMessage);
-    udp.endPacket();
-    Serial.print(" with contents: ");
-    Serial.println(UDPtestMessage);
 }
 
 float getVcc(void)
@@ -87,6 +70,32 @@ float getVcc(void)
     return sum / (float)numberOfSamples;
 }
 
+void sendUDPpacket()
+{
+    //create payload
+    DynamicJsonDocument doc(500);
+    doc["device_type"] = g_config.getDeviceType();
+    doc["device_version"] = g_config.getDeviceVersion();
+    doc["device_tag"] = g_config.getDeviceTag();
+    doc["room"] = g_config.getRoom();
+    doc["wifi_ssid"] = WiFi.SSID();
+    doc["wifi_rssi"] = WiFi.RSSI();
+    doc["vcc"] = getVcc();
+    //to string
+    String jsonString;
+    serializeJson(doc, jsonString);
+    //start sending...
+    Serial.print("sending UDP packet to ");
+    Serial.print(g_config.getUDPServerAsString());
+    Serial.print(" on port ");
+    Serial.print(g_config.getUDPPort());
+    g_udp.beginPacket(g_config.getUDPServerAsString(), g_config.getUDPPort());
+    g_udp.print(jsonString);
+    g_udp.endPacket();
+    Serial.print(" with contents: ");
+    Serial.println(jsonString);
+}
+
 // ===================================================================================
 // note that there is no WiFi.begin() in the setup.
 // It IS accessed in a function the 1st time the sketch is run
@@ -96,8 +105,11 @@ float getVcc(void)
 void setup(void)
 {
     Serial.begin(115200);
+    g_pinStayAwake.begin();
+    pinMode(g_pinStayAwake.getPinNumber(), INPUT_PULLUP);
     // a significant part of the speed gain is by using a static IP config
-    WiFi.config(IPA, GATE, MASK);
+    //WiFi.begin();
+    WiFi.config(g_config.getIPAddress(), g_config.getGateway(), g_config.getSubnetMask());
     // so even though no WiFi.connect() so far, check and see if we are connecting.
     // The 1st time sketch runs, this will time-out and THEN it accesses WiFi.connect().
     // After the first time (and a successful connect), next time it connects very fast
@@ -117,9 +129,22 @@ void setup(void)
     Serial.println(WiFi.SSID());
     Serial.print("IP address: ");
     Serial.println(WiFi.localIP());
-
+    Serial.print("Subnetmask: ");
+    Serial.println(WiFi.subnetMask());
+    Serial.print("Gateway: ");
+    Serial.println(WiFi.gatewayIP());
     Serial.print("Vcc: ");
     Serial.println(getVcc());
+    //send our packet
+    sendUDPpacket();
+    //setup the server
+    Serial.println(F("Setting up web server"));
+    g_webServer.begin();
+    //setup SPIFFS
+    Serial.println(F("Setting up SPIFFS"));
+    if (!SPIFFS.begin()) resetWithMessage("SPIFFS initialization failed, resetting");
+    //give some time for message sending in background
+    delay(1250);
 }
 
 // ===================================================================================
@@ -127,12 +152,15 @@ void setup(void)
 // ------------------------------------------------------------------------------------------
 void loop(void)
 {
-    //send our packet
-    sendUDPpacket();
-    //give some time for message sending in background
-    delay(1250);
-    //debug log
-    Serial.println("Going to sleep...");
-    //go into deepsleep!
-    ESP.deepSleep(0);
+    if (g_pinStayAwake.isHigh())
+    {
+        g_webServer.handleClient();
+    }
+    else
+    {
+        //debug log
+        Serial.println("Going to sleep...");
+        //go into deepsleep!
+        ESP.deepSleep(0);
+    }
 }

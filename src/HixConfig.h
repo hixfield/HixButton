@@ -2,6 +2,7 @@
 #define HixConfig_h
 
 #include <arduino.h>
+#include <ipaddress.h>
 
 class HixConfig
 {
@@ -14,9 +15,9 @@ private:
     //overall settings
     char szWifiSsid[50];
     char szWifiPassword[50];
-    char szMyIPAddress[50];
-    char szMySubnetMask[50];
-    char szMyGateway[50];
+    char szIPAddress[50];
+    char szSubnetMask[50];
+    char szGateway[50];
     bool bOTAEnabled;
     char szConfigPassword[50];
     //my location stuff
@@ -41,31 +42,35 @@ public:
 
   const char *getWifiSsid(void);
   const char *getWifiPassword(void);
-  const char *getMyIPAddress(void);
-  const char *getMySubnetMask(void);
-  const char *getMyGateway(void);
+  const char *getIPAddressAsString(void);
+  IPAddress getIPAddress(void);
+  const char *getSubnetMaskAsString(void);
+  IPAddress getSubnetMask(void);
+  const char *getGatewayAsString(void);
+  IPAddress getGateway(void);
   bool getOTAEnabled(void);
   const char *getConfigPassword(void);
-  
+
   const char *getRoom(void);
   const char *getDeviceTag(void);
 
-  const char *getUDPServer(void);
+  const char *getUDPServerAsString(void);
   int getUDPPort(void);
 
   //setters
   void setWifiSsid(const char *szValue);
   void setWifiPassword(const char *szValue);
-  void setMyIPAddress(const char *szValue);
-  void setMySubnetMask(const char *szValue);
-  void setMyGateway(const char *szValue);
+  void setIPAddress(const char *szValue);
+  void setSubnetMask(const char *szValue);
+  void setGateway(const char *szValue);
   void setOTAEnabled(bool bValue);
+  void setConfigPassword(const char *szValue);
 
   void setRoom(const char *szValue);
   void setDeviceTag(const char *szValue);
 
   void setUDPServer(const char *szValue);
-  void setUDPPort(int szValue);
+  void setUDPPort(int nValue);
 
   //save to eeprom
   void commitToEEPROM(void);
