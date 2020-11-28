@@ -158,12 +158,12 @@ void HixConfig::replacePlaceholders(String & contents) {
     contents.replace("||DEVICE_VERSION||", getDeviceVersion());
     contents.replace("||WIFI_SSID||", getWifiSsid());
     contents.replace("||WIFI_PWD||", getWifiPassword());
-    contents.replace("||MY_IP||", getIPAddressAsString());
-    contents.replace("||MY_MASK||", getSubnetMaskAsString());
-    contents.replace("||MY_GATEWAY||", getGatewayAsString());
+    contents.replace("||IP||", getIPAddressAsString());
+    contents.replace("||MASK||", getSubnetMaskAsString());
+    contents.replace("||GATEWAY||", getGatewayAsString());
     contents.replace("||OTA_ENABLED||", getOTAEnabled()? "checked":"");    
-    contents.replace("||MY_ROOM||", getRoom());
-    contents.replace("||MY_DEVICE_TAG||", getDeviceTag());
+    contents.replace("||ROOM||", getRoom());
+    contents.replace("||DEVICE_TAG||", getDeviceTag());
     contents.replace("||UDP_SERVER||", getUDPServerAsString());
     contents.replace("||UDP_PORT||", String(getUDPPort()));
     contents.replace("||CONFIG_PWD||", getConfigPassword());

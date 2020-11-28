@@ -10,6 +10,7 @@
 #include "HixWebServer.h"
 #include "secret.h"
 #include "HixConfig.h"
+#include <Adafruit_NeoPixel.h>
 
 ADC_MODE(ADC_VCC);
 
@@ -17,9 +18,34 @@ HixConfig g_config;
 HixWebServer g_webServer(g_config);
 HixPinDigitalInput g_pinStayAwake(4);
 WiFiUDP g_udp;
+Adafruit_NeoPixel g_rgbLed = Adafruit_NeoPixel(1, 5, NEO_GRB + NEO_KHZ400);
 
+enum Color : uint32_t {
+    black  = 0x000000,
+    white  = 0xFFFFFF,
+    red    = 0xFF0000,
+    green  = 0x00FF00,
+    blue   = 0x0000FF,
+    orange = 0xFF8C00
+};
 
-void resetWithMessage(const char * szMessage) {
+void setLedColor(Color color, u32_t nDimFactor = 16) {
+    //make base colors
+    u32_t nR = color >> 16;
+    u32_t nG = (color & 0x00FF00) >> 8;
+    u32_t nB = color & 0x0000FF;
+    //take dimming into account
+    nR /= nDimFactor;
+    nG /= nDimFactor;
+    nB /= nDimFactor;
+    //reassemble
+    u32_t nDimmedColor = (nR << 16) | (nG << 8) | nB;
+    g_rgbLed.setPixelColor(0, nDimmedColor);
+    g_rgbLed.show();
+}
+
+void resetWithMessage(const char *szMessage)
+{
     Serial.println(szMessage);
     delay(2000);
     ESP.reset();
@@ -138,11 +164,16 @@ void setup(void)
     //send our packet
     sendUDPpacket();
     //setup the server
+    Serial.println(F("Setting up RGB lede"));
+    g_rgbLed.begin();
+    setLedColor(Color::blue);
+    //setup the server
     Serial.println(F("Setting up web server"));
     g_webServer.begin();
     //setup SPIFFS
     Serial.println(F("Setting up SPIFFS"));
-    if (!SPIFFS.begin()) resetWithMessage("SPIFFS initialization failed, resetting");
+    if (!SPIFFS.begin())
+        resetWithMessage("SPIFFS initialization failed, resetting");
     //give some time for message sending in background
     delay(1250);
 }
