@@ -6,10 +6,9 @@ A simple ESP8266 IoT button powered by a single Li Fe PO4 battery.
 Puts the ESP in a super deep sleep after pressing the button to conserve battery power.
 
 ## Improvements
+- [ ] put module in AP config if not connect
+- [ ] interface to configure all details (cfr Config class)
+- [ ] LiFe PO4 charging, undervoltage and overvoltage protection circutry
 
-- [ ] option to press a button to put the module in (web) config mode
-- [ ] make WIFI details configurable
-- [ ] make puts url configurable
-
-## Configuration web interface
-* At this moment the WIFI SSID and password are hardcoded in the src/secret.cpp file
+## Schematic
+![HixButon schematic](hardware/images/schematic.png)
