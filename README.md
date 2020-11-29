@@ -16,9 +16,17 @@ A simple ESP8266 based WiFi IoT button.
 
 ## Improvements
 - [ ] LiFe PO4 charging, undervoltage and overvoltage protection circutry
-- [ ] put module in AP config if not connect
-- [ ] config option to use DHCP or fixed ip
-- [ ] interface to configure all details (cfr Config class)
+- [ ] External charging connector (USB-C?)
+- [ ] External FTDI programming connector 
+- [ ] FTDI power is always 5V, this could also be connected to the battery charging so its also possible to charge that way
+- [ ] mind back powering (no feeding power INTO a power input for somewhere else...) as we have 3 possible power sources (1)battery (2)charging connector (3)FTDI => include diodes everywhere?
+- [ ] Don't go to sleep if (1)FTDI plugged-in (2)charing power applied
+- [ ] Add external connector to plug in external switch contact (parallel to the current reset switch to wakeup). As a way to more generic use it e.g. for "there is physical mail"
+
+## Will not do
+- [ ] We don't really want to pug a CH340 USB serial on it (to complex for once programming)
+- [ ] OTA programming
+
 
 ## Schematic
 ![HixButon schematic](hardware/images/schematic.png)
