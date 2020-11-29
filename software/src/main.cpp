@@ -20,7 +20,7 @@ HixWebServer g_webServer(g_config);
 HixPinDigitalInput g_pinStayAwake(4);
 WiFiUDP g_udp;
 Adafruit_NeoPixel g_rgbLed = Adafruit_NeoPixel(1, 5, NEO_GRB + NEO_KHZ400);
-HixTimeout g_accessPointTimeout(120000);
+HixTimeout g_accessPointTimeout(10*60*1000);
 enum Color : uint32_t
 {
     black = 0x000000,
