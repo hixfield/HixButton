@@ -15,6 +15,7 @@ A simple ESP8266 based WiFi IoT button.
 - Fast WiFi connection establish techniques (e.g. fixed ip) to make button responsive
 
 ## Improvements
+- [ ] lets order a stencel for the PCB to test it :)
 - [ ] LiFe PO4 charging, undervoltage and overvoltage protection circutry
 - [ ] External charging connector (USB-C?)
 - [ ] External FTDI programming connector 
