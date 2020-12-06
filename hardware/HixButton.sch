@@ -9,34 +9,34 @@
 </settings>
 <grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
-<layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
-<layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
-<layer number="3" name="Route3" color="4" fill="3" visible="no" active="no"/>
-<layer number="4" name="Route4" color="1" fill="4" visible="no" active="no"/>
-<layer number="5" name="Route5" color="4" fill="4" visible="no" active="no"/>
-<layer number="6" name="Route6" color="1" fill="8" visible="no" active="no"/>
-<layer number="7" name="Route7" color="4" fill="8" visible="no" active="no"/>
-<layer number="8" name="Route8" color="1" fill="2" visible="no" active="no"/>
-<layer number="9" name="Route9" color="4" fill="2" visible="no" active="no"/>
-<layer number="10" name="Route10" color="1" fill="7" visible="no" active="no"/>
-<layer number="11" name="Route11" color="4" fill="7" visible="no" active="no"/>
-<layer number="12" name="Route12" color="1" fill="5" visible="no" active="no"/>
-<layer number="13" name="Route13" color="4" fill="5" visible="no" active="no"/>
-<layer number="14" name="Route14" color="1" fill="6" visible="no" active="no"/>
-<layer number="15" name="Route15" color="4" fill="6" visible="no" active="no"/>
-<layer number="16" name="Bottom" color="1" fill="1" visible="no" active="no"/>
-<layer number="17" name="Pads" color="2" fill="1" visible="no" active="no"/>
-<layer number="18" name="Vias" color="2" fill="1" visible="no" active="no"/>
-<layer number="19" name="Unrouted" color="6" fill="1" visible="no" active="no"/>
-<layer number="20" name="Dimension" color="15" fill="1" visible="no" active="no"/>
-<layer number="21" name="tPlace" color="7" fill="1" visible="no" active="no"/>
-<layer number="22" name="bPlace" color="7" fill="1" visible="no" active="no"/>
-<layer number="23" name="tOrigins" color="15" fill="1" visible="no" active="no"/>
-<layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="no"/>
-<layer number="25" name="tNames" color="7" fill="1" visible="no" active="no"/>
-<layer number="26" name="bNames" color="7" fill="1" visible="no" active="no"/>
-<layer number="27" name="tValues" color="7" fill="1" visible="no" active="no"/>
-<layer number="28" name="bValues" color="7" fill="1" visible="no" active="no"/>
+<layer number="1" name="Top" color="4" fill="1" visible="yes" active="no"/>
+<layer number="2" name="Route2" color="16" fill="1" visible="yes" active="no"/>
+<layer number="3" name="Route3" color="17" fill="1" visible="yes" active="no"/>
+<layer number="4" name="Route4" color="18" fill="1" visible="yes" active="no"/>
+<layer number="5" name="Route5" color="19" fill="1" visible="yes" active="no"/>
+<layer number="6" name="Route6" color="25" fill="1" visible="yes" active="no"/>
+<layer number="7" name="Route7" color="26" fill="1" visible="yes" active="no"/>
+<layer number="8" name="Route8" color="27" fill="1" visible="yes" active="no"/>
+<layer number="9" name="Route9" color="28" fill="1" visible="yes" active="no"/>
+<layer number="10" name="Route10" color="29" fill="1" visible="yes" active="no"/>
+<layer number="11" name="Route11" color="30" fill="1" visible="yes" active="no"/>
+<layer number="12" name="Route12" color="20" fill="1" visible="yes" active="no"/>
+<layer number="13" name="Route13" color="21" fill="1" visible="yes" active="no"/>
+<layer number="14" name="Route14" color="22" fill="1" visible="yes" active="no"/>
+<layer number="15" name="Route15" color="23" fill="1" visible="yes" active="no"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="no"/>
+<layer number="17" name="Pads" color="2" fill="1" visible="yes" active="no"/>
+<layer number="18" name="Vias" color="2" fill="1" visible="yes" active="no"/>
+<layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="no"/>
+<layer number="20" name="Dimension" color="24" fill="1" visible="yes" active="no"/>
+<layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="no"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="no"/>
+<layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="no"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="no"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="no"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="no"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="yes" active="no"/>
+<layer number="28" name="bValues" color="7" fill="1" visible="yes" active="no"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="no"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="no" active="no"/>
 <layer number="31" name="tCream" color="7" fill="4" visible="no" active="no"/>
@@ -45,8 +45,8 @@
 <layer number="34" name="bFinish" color="6" fill="6" visible="no" active="no"/>
 <layer number="35" name="tGlue" color="7" fill="4" visible="no" active="no"/>
 <layer number="36" name="bGlue" color="7" fill="5" visible="no" active="no"/>
-<layer number="37" name="tTest" color="7" fill="1" visible="no" active="no"/>
-<layer number="38" name="bTest" color="7" fill="1" visible="no" active="no"/>
+<layer number="37" name="tTest" color="7" fill="1" visible="yes" active="no"/>
+<layer number="38" name="bTest" color="7" fill="1" visible="yes" active="no"/>
 <layer number="39" name="tKeepout" color="4" fill="11" visible="no" active="no"/>
 <layer number="40" name="bKeepout" color="1" fill="11" visible="no" active="no"/>
 <layer number="41" name="tRestrict" color="4" fill="10" visible="no" active="no"/>
@@ -54,17 +54,17 @@
 <layer number="43" name="vRestrict" color="2" fill="10" visible="no" active="no"/>
 <layer number="44" name="Drills" color="7" fill="1" visible="no" active="no"/>
 <layer number="45" name="Holes" color="7" fill="1" visible="no" active="no"/>
-<layer number="46" name="Milling" color="3" fill="1" visible="no" active="no"/>
-<layer number="47" name="Measures" color="7" fill="1" visible="no" active="no"/>
-<layer number="48" name="Document" color="7" fill="1" visible="no" active="no"/>
-<layer number="49" name="Reference" color="7" fill="1" visible="no" active="no"/>
-<layer number="50" name="dxf" color="7" fill="1" visible="no" active="no"/>
-<layer number="51" name="tDocu" color="7" fill="1" visible="no" active="no"/>
-<layer number="52" name="bDocu" color="7" fill="1" visible="no" active="no"/>
-<layer number="53" name="tGND_GNDA" color="7" fill="9" visible="no" active="no"/>
-<layer number="54" name="bGND_GNDA" color="1" fill="9" visible="no" active="no"/>
-<layer number="56" name="wert" color="7" fill="1" visible="no" active="no"/>
-<layer number="57" name="tCAD" color="7" fill="1" visible="no" active="no"/>
+<layer number="46" name="Milling" color="3" fill="1" visible="yes" active="no"/>
+<layer number="47" name="Measures" color="7" fill="1" visible="yes" active="no"/>
+<layer number="48" name="Document" color="7" fill="1" visible="yes" active="no"/>
+<layer number="49" name="Reference" color="7" fill="1" visible="yes" active="no"/>
+<layer number="50" name="dxf" color="7" fill="1" visible="yes" active="no"/>
+<layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="no"/>
+<layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="no"/>
+<layer number="53" name="tGND_GNDA" color="7" fill="9" visible="yes" active="no"/>
+<layer number="54" name="bGND_GNDA" color="1" fill="9" visible="yes" active="no"/>
+<layer number="56" name="wert" color="7" fill="1" visible="yes" active="no"/>
+<layer number="57" name="tCAD" color="7" fill="1" visible="yes" active="no"/>
 <layer number="88" name="SimResults" color="9" fill="1" visible="yes" active="yes"/>
 <layer number="89" name="SimProbes" color="9" fill="1" visible="yes" active="yes"/>
 <layer number="90" name="Modules" color="5" fill="1" visible="yes" active="yes"/>
@@ -152,7 +152,7 @@
 </layers>
 <schematic xreflabel="%F%N/%S.%C%R" xrefpart="/%S.%C%R">
 <libraries>
-<library name="supply1">
+<library name="supply1" urn="urn:adsk.eagle:library:371">
 <description>&lt;b&gt;Supply Symbols&lt;/b&gt;&lt;p&gt;
  GND, VCC, 0V, +5V, -5V, etc.&lt;p&gt;
  Please keep in mind, that these devices are necessary for the
@@ -163,14 +163,14 @@
 <packages>
 </packages>
 <symbols>
-<symbol name="GND">
+<symbol name="GND" urn="urn:adsk.eagle:symbol:26925/1" library_version="1">
 <wire x1="-1.905" y1="0" x2="1.905" y2="0" width="0.254" layer="94"/>
 <text x="-2.54" y="-2.54" size="1.778" layer="96">&gt;VALUE</text>
 <pin name="GND" x="0" y="2.54" visible="off" length="short" direction="sup" rot="R270"/>
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="GND" prefix="GND">
+<deviceset name="GND" urn="urn:adsk.eagle:component:26954/1" prefix="GND" library_version="1">
 <description>&lt;b&gt;SUPPLY SYMBOL&lt;/b&gt;</description>
 <gates>
 <gate name="1" symbol="GND" x="0" y="0"/>
@@ -368,6 +368,55 @@
 <rectangle x1="0.7112" y1="-1.2954" x2="1.1684" y2="-0.7112" layer="51"/>
 <rectangle x1="-1.1684" y1="-1.2954" x2="-0.7112" y2="-0.7112" layer="51"/>
 </package>
+<package name="SOP8" urn="urn:adsk.eagle:footprint:26249/1" library_version="32">
+<description>&lt;b&gt;SOP8&lt;/b&gt;&lt;p&gt;
+Source: http://www.rohm.com/products/databook/motor/pdf/bd623x_series-e.pdf</description>
+<wire x1="2.395" y1="2.085" x2="2.395" y2="-2.11" width="0.2032" layer="21"/>
+<wire x1="2.395" y1="-2.11" x2="-2.395" y2="-2.11" width="0.2032" layer="51"/>
+<wire x1="-2.395" y1="-2.11" x2="-2.395" y2="2.085" width="0.2032" layer="21"/>
+<wire x1="-2.395" y1="2.085" x2="2.395" y2="2.085" width="0.2032" layer="51"/>
+<wire x1="-2.34" y1="0.635" x2="-2.34" y2="-0.635" width="0.2032" layer="21" curve="-180"/>
+<smd name="1" x="-1.905" y="-2.6" dx="0.6" dy="1.6" layer="1"/>
+<smd name="2" x="-0.635" y="-2.6" dx="0.6" dy="1.6" layer="1"/>
+<smd name="3" x="0.635" y="-2.6" dx="0.6" dy="1.6" layer="1"/>
+<smd name="4" x="1.905" y="-2.6" dx="0.6" dy="1.6" layer="1"/>
+<smd name="5" x="1.905" y="2.6" dx="0.6" dy="1.6" layer="1"/>
+<smd name="6" x="0.635" y="2.6" dx="0.6" dy="1.6" layer="1"/>
+<smd name="7" x="-0.635" y="2.6" dx="0.6" dy="1.6" layer="1"/>
+<smd name="8" x="-1.905" y="2.6" dx="0.6" dy="1.6" layer="1"/>
+<text x="-3.175" y="-3.175" size="1.27" layer="25" rot="R90">&gt;NAME</text>
+<text x="4.445" y="-3.175" size="1.27" layer="27" rot="R90">&gt;VALUE</text>
+<rectangle x1="-2.1549" y1="-3.1" x2="-1.6551" y2="-2.2" layer="51"/>
+<rectangle x1="-0.8849" y1="-3.1" x2="-0.3851" y2="-2.2" layer="51"/>
+<rectangle x1="0.3851" y1="-3.1" x2="0.8849" y2="-2.2" layer="51"/>
+<rectangle x1="1.6551" y1="-3.1" x2="2.1549" y2="-2.2" layer="51"/>
+<rectangle x1="1.6551" y1="2.2" x2="2.1549" y2="3.1" layer="51"/>
+<rectangle x1="0.3851" y1="2.2" x2="0.8849" y2="3.1" layer="51"/>
+<rectangle x1="-0.8849" y1="2.2" x2="-0.3851" y2="3.1" layer="51"/>
+<rectangle x1="-2.1549" y1="2.2" x2="-1.6551" y2="3.1" layer="51"/>
+</package>
+<package name="LED_5050" urn="urn:adsk.eagle:footprint:25237727/1" library_version="33" library_locally_modified="yes">
+<wire x1="-2.5" y1="-2.5" x2="2.5" y2="-2.5" width="0.127" layer="21"/>
+<wire x1="2.5" y1="2.5" x2="-2.5" y2="2.5" width="0.127" layer="21"/>
+<wire x1="-2.5" y1="-2.5" x2="2.5" y2="-2.5" width="0.127" layer="51"/>
+<wire x1="2.5" y1="-2.5" x2="2.5" y2="2.5" width="0.127" layer="51"/>
+<wire x1="2.5" y1="2.5" x2="-2.5" y2="2.5" width="0.127" layer="51"/>
+<wire x1="-2.5" y1="2.5" x2="-2.5" y2="-2.5" width="0.127" layer="51"/>
+<wire x1="-3.45" y1="2.75" x2="3.45" y2="2.75" width="0.05" layer="39"/>
+<wire x1="3.45" y1="2.75" x2="3.45" y2="-2.75" width="0.05" layer="39"/>
+<wire x1="3.45" y1="-2.75" x2="-3.45" y2="-2.75" width="0.05" layer="39"/>
+<wire x1="-3.45" y1="-2.75" x2="-3.45" y2="2.75" width="0.05" layer="39"/>
+<wire x1="-2.5" y1="-0.7865" x2="-2.5" y2="0.7865" width="0.127" layer="21"/>
+<wire x1="2.5" y1="-0.7865" x2="2.5" y2="0.7865" width="0.127" layer="21"/>
+<text x="-3.5" y="3" size="1.27" layer="25">&gt;NAME</text>
+<text x="-3.5" y="-3" size="1.27" layer="27" align="top-left">&gt;VALUE</text>
+<circle x="-3.75" y="1.6" radius="0.1" width="0.2" layer="21"/>
+<circle x="-3.75" y="1.6" radius="0.1" width="0.2" layer="51"/>
+<smd name="1" x="-2.45" y="1.6" dx="1" dy="1.5" layer="1" rot="R90"/>
+<smd name="4" x="2.45" y="1.6" dx="1" dy="1.5" layer="1" rot="R90"/>
+<smd name="2" x="-2.45" y="-1.6" dx="1" dy="1.5" layer="1" rot="R90"/>
+<smd name="3" x="2.45" y="-1.6" dx="1" dy="1.5" layer="1" rot="R90"/>
+</package>
 </packages>
 <packages3d>
 <package3d name="ESP8266(ESP12E)" urn="urn:adsk.eagle:package:12836033/3" type="model" library_version="8">
@@ -419,6 +468,18 @@
 &lt;p&gt;3-pin SOT23 package with 0.95 mm pitch, 2.40 mm span with body size 2.90 X 1.30 X 1.10 mm&lt;/p&gt;</description>
 <packageinstances>
 <packageinstance name="SOT23"/>
+</packageinstances>
+</package3d>
+<package3d name="SOP8" urn="urn:adsk.eagle:package:25237379/2" type="model" library_version="32">
+<description>SOP8
+Source: http://www.rohm.com/products/databook/motor/pdf/bd623x_series-e.pdf</description>
+<packageinstances>
+<packageinstance name="SOP8"/>
+</packageinstances>
+</package3d>
+<package3d name="LED_5050" urn="urn:adsk.eagle:package:25237728/2" type="model" library_version="33" library_locally_modified="yes">
+<packageinstances>
+<packageinstance name="LED_5050"/>
 </packageinstances>
 </package3d>
 </packages3d>
@@ -624,7 +685,7 @@
 <circle x="0" y="0" radius="0.915809375" width="0.254" layer="94"/>
 <text x="1.27" y="-4.064" size="1.778" layer="95" align="center">&gt;NAME</text>
 </symbol>
-<symbol name="TPS3839" urn="urn:adsk.eagle:symbol:25234365/2" locally_modified="yes" library_version="29" library_locally_modified="yes">
+<symbol name="TPS3839" urn="urn:adsk.eagle:symbol:25234365/3" library_version="33" library_locally_modified="yes">
 <pin name="VDD" x="2.54" y="10.16" visible="off" length="short" direction="sup" rot="R270"/>
 <pin name="GND" x="2.54" y="-10.16" visible="off" length="short" direction="sup" rot="R90"/>
 <pin name="RST" x="15.24" y="0" visible="pin" length="middle" direction="out" function="dot" rot="R180"/>
@@ -637,7 +698,7 @@
 <text x="2.54" y="-5.08" size="1.524" layer="95" align="bottom-center">GND</text>
 <text x="2.54" y="5.08" size="1.524" layer="95" align="top-center">VDD</text>
 </symbol>
-<symbol name="CN3058E" library_version="29" library_locally_modified="yes">
+<symbol name="CN3058E" urn="urn:adsk.eagle:symbol:25237378/1" library_version="32">
 <pin name="VIN" x="0" y="15.24" length="short" direction="hiz" rot="R270"/>
 <pin name="GND" x="0" y="-15.24" visible="pin" length="short" direction="sup" rot="R90"/>
 <pin name="DONE" x="-15.24" y="-7.62" visible="pin" length="short" direction="out" function="dot"/>
@@ -790,7 +851,7 @@
 </device>
 </devices>
 </deviceset>
-<deviceset name="LED_RGB" urn="urn:adsk.eagle:component:17854570/3" library_version="25">
+<deviceset name="LED_RGB" urn="urn:adsk.eagle:component:17854570/3" locally_modified="yes" library_version="33" library_locally_modified="yes">
 <gates>
 <gate name="G$1" symbol="LED_RGB" x="0" y="0"/>
 </gates>
@@ -804,6 +865,20 @@
 </connects>
 <package3dinstances>
 <package3dinstance package3d_urn="urn:adsk.eagle:package:17854569/4"/>
+</package3dinstances>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="WS2812_5050" package="LED_5050">
+<connects>
+<connect gate="G$1" pin="DIN" pad="2"/>
+<connect gate="G$1" pin="DOUT" pad="4"/>
+<connect gate="G$1" pin="GND" pad="1"/>
+<connect gate="G$1" pin="VCC" pad="3"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:25237728/2"/>
 </package3dinstances>
 <technologies>
 <technology name=""/>
@@ -830,7 +905,7 @@
 </device>
 </devices>
 </deviceset>
-<deviceset name="TPS3839" urn="urn:adsk.eagle:component:25234445/2" prefix="U" library_version="29" library_locally_modified="yes">
+<deviceset name="TPS3839" urn="urn:adsk.eagle:component:25234445/3" prefix="U" library_version="33" library_locally_modified="yes">
 <description>P-Channel enchanced mode mosfet</description>
 <gates>
 <gate name="G$1" symbol="TPS3839" x="0" y="0"/>
@@ -851,12 +926,25 @@
 </device>
 </devices>
 </deviceset>
-<deviceset name="CN3058E" library_version="29" library_locally_modified="yes">
+<deviceset name="CN3058E" urn="urn:adsk.eagle:component:25237380/3" library_version="32">
 <gates>
 <gate name="G$1" symbol="CN3058E" x="0" y="0"/>
 </gates>
 <devices>
-<device name="">
+<device name="" package="SOP8">
+<connects>
+<connect gate="G$1" pin="BAT" pad="5"/>
+<connect gate="G$1" pin="CHRG" pad="7"/>
+<connect gate="G$1" pin="DONE" pad="6"/>
+<connect gate="G$1" pin="FB" pad="8"/>
+<connect gate="G$1" pin="GND" pad="3"/>
+<connect gate="G$1" pin="ISET" pad="2"/>
+<connect gate="G$1" pin="TEMP" pad="1"/>
+<connect gate="G$1" pin="VIN" pad="4"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:25237379/2"/>
+</package3dinstances>
 <technologies>
 <technology name=""/>
 </technologies>
@@ -11182,14 +11270,14 @@ Source: www.cypressindustries.com</description>
 </class>
 </classes>
 <parts>
-<part name="GND1" library="supply1" deviceset="GND" device=""/>
+<part name="GND1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="C6" library="0_HixField" library_urn="urn:adsk.eagle:library:13392178" deviceset="ELCO" device="ELKO_RADIAL_STRAIGHT_4P_8D_9H" package3d_urn="urn:adsk.eagle:package:17790431/3" value="680μF/6.3V"/>
 <part name="SUPPLY2" library="0_HixField" library_urn="urn:adsk.eagle:library:13392178" deviceset="3.3V" device=""/>
 <part name="J1" library="0_HixField" library_urn="urn:adsk.eagle:library:13392178" deviceset="FTDI" device="" package3d_urn="urn:adsk.eagle:package:12836035/3"/>
-<part name="GND3" library="supply1" deviceset="GND" device=""/>
+<part name="GND3" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="FRAME1" library="frames" library_urn="urn:adsk.eagle:library:229" deviceset="A4L-LOC" device=""/>
-<part name="U$2" library="0_HixField" library_urn="urn:adsk.eagle:library:13392178" deviceset="ESP8266(ESP12E)V2" device="" package3d_urn="urn:adsk.eagle:package:12836033/3"/>
-<part name="GND11" library="supply1" deviceset="GND" device=""/>
+<part name="U3" library="0_HixField" library_urn="urn:adsk.eagle:library:13392178" deviceset="ESP8266(ESP12E)V2" device="" package3d_urn="urn:adsk.eagle:package:12836033/3"/>
+<part name="GND11" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="SUPPLY14" library="0_HixField" library_urn="urn:adsk.eagle:library:13392178" deviceset="3.3V" device=""/>
 <part name="C5" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="100nF">
 <spice>
@@ -11208,11 +11296,11 @@ Source: www.cypressindustries.com</description>
 <part name="R12" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R1206" package3d_urn="urn:adsk.eagle:package:23540/2" value="2.2K"/>
 <part name="SUPPLY17" library="0_HixField" library_urn="urn:adsk.eagle:library:13392178" deviceset="3.3V" device=""/>
 <part name="S4" library="0_HixField" library_urn="urn:adsk.eagle:library:13392178" deviceset="PUSHBTN" device="SMALL" package3d_urn="urn:adsk.eagle:package:12836051/3" value="PROG"/>
-<part name="GND14" library="supply1" deviceset="GND" device=""/>
+<part name="GND14" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="R2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R1206" package3d_urn="urn:adsk.eagle:package:23540/2" value="10K"/>
-<part name="GND4" library="supply1" deviceset="GND" device=""/>
-<part name="U$3" library="0_HixField" library_urn="urn:adsk.eagle:library:13392178" deviceset="LED_RGB" device="" package3d_urn="urn:adsk.eagle:package:17854569/4"/>
-<part name="GND9" library="supply1" deviceset="GND" device=""/>
+<part name="GND4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="U4" library="0_HixField" library_urn="urn:adsk.eagle:library:13392178" deviceset="LED_RGB" device="WS2812_5050" package3d_urn="urn:adsk.eagle:package:25237728/2" value="LED_RGBWS2812_5050"/>
+<part name="GND9" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="C3" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="100nF">
 <spice>
 <pinmapping spiceprefix="C">
@@ -11226,12 +11314,12 @@ Source: www.cypressindustries.com</description>
 <part name="R1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R1206" package3d_urn="urn:adsk.eagle:package:23540/2" value="10K"/>
 <part name="SUPPLY4" library="0_HixField" library_urn="urn:adsk.eagle:library:13392178" deviceset="3.3V" device=""/>
 <part name="JMP1" library="jumper" library_urn="urn:adsk.eagle:library:252" deviceset="SJ" device="" package3d_urn="urn:adsk.eagle:package:15471/1"/>
-<part name="GND2" library="supply1" deviceset="GND" device=""/>
+<part name="GND2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="LIFEPO4" library="0_HixField" library_urn="urn:adsk.eagle:library:13392178" deviceset="XH2P" device="" package3d_urn="urn:adsk.eagle:package:12836045/3"/>
 <part name="WAKE" library="0_HixField" library_urn="urn:adsk.eagle:library:13392178" deviceset="XH2P" device="" package3d_urn="urn:adsk.eagle:package:12836045/3"/>
 <part name="U1" library="0_HixField" library_urn="urn:adsk.eagle:library:13392178" deviceset="TPS3839" device="" package3d_urn="urn:adsk.eagle:package:12836027/2" value="TPS3839L30"/>
 <part name="SUPPLY5" library="0_HixField" library_urn="urn:adsk.eagle:library:13392178" deviceset="3.3V" device=""/>
-<part name="GND5" library="supply1" deviceset="GND" device=""/>
+<part name="GND5" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="C1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="100nF">
 <spice>
 <pinmapping spiceprefix="C">
@@ -11240,14 +11328,12 @@ Source: www.cypressindustries.com</description>
 </pinmapping>
 </spice>
 </part>
-<part name="U$1" library="0_HixField" library_urn="urn:adsk.eagle:library:13392178" deviceset="CN3058E" device=""/>
-<part name="R3" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R1206" package3d_urn="urn:adsk.eagle:package:23540/2" value="10K"/>
-<part name="GND6" library="supply1" deviceset="GND" device=""/>
-<part name="GND7" library="supply1" deviceset="GND" device=""/>
-<part name="GND8" library="supply1" deviceset="GND" device=""/>
-<part name="GND12" library="supply1" deviceset="GND" device=""/>
-<part name="GND13" library="supply1" deviceset="GND" device=""/>
-<part name="GND15" library="supply1" deviceset="GND" device=""/>
+<part name="R3" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R1206" package3d_urn="urn:adsk.eagle:package:23540/2" value="1.2K"/>
+<part name="GND6" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="GND7" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="GND12" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="GND13" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="GND15" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="C2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="1uF">
 <spice>
 <pinmapping spiceprefix="C">
@@ -11256,12 +11342,14 @@ Source: www.cypressindustries.com</description>
 </pinmapping>
 </spice>
 </part>
-<part name="GND10" library="supply1" deviceset="GND" device=""/>
+<part name="GND10" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="L2" library="led" library_urn="urn:adsk.eagle:library:259" deviceset="LED" device="CHIPLED_1206" package3d_urn="urn:adsk.eagle:package:15823/2" value="RED"/>
 <part name="L1" library="led" library_urn="urn:adsk.eagle:library:259" deviceset="LED" device="CHIPLED_1206" package3d_urn="urn:adsk.eagle:package:15823/2" value="GRN"/>
-<part name="R4" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R1206" package3d_urn="urn:adsk.eagle:package:23540/2" value="10K"/>
+<part name="R4" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R1206" package3d_urn="urn:adsk.eagle:package:23540/2" value="330"/>
 <part name="X1" library="con-cypressindustries" library_urn="urn:adsk.eagle:library:138" deviceset="MINI-USB_SHIELD5P4-" device="32005-400" package3d_urn="urn:adsk.eagle:package:6462/1"/>
-<part name="GND16" library="supply1" deviceset="GND" device=""/>
+<part name="GND16" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="U2" library="0_HixField" library_urn="urn:adsk.eagle:library:13392178" deviceset="CN3058E" device="" package3d_urn="urn:adsk.eagle:package:25237379/2"/>
+<part name="GND8" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -11306,7 +11394,7 @@ Source: www.cypressindustries.com</description>
 <attribute name="LAST_DATE_TIME" x="207.01" y="-35.56" size="2.286" layer="94"/>
 <attribute name="SHEET" x="220.345" y="-40.64" size="2.54" layer="94"/>
 </instance>
-<instance part="U$2" gate="G$1" x="76.2" y="7.62" smashed="yes">
+<instance part="U3" gate="G$1" x="76.2" y="7.62" smashed="yes">
 <attribute name="NAME" x="66.04" y="45.72" size="1.778" layer="95" rot="R180" align="center-right"/>
 <attribute name="VALUE" x="99.06" y="45.72" size="1.778" layer="96" align="center-right"/>
 </instance>
@@ -11359,7 +11447,7 @@ Source: www.cypressindustries.com</description>
 <instance part="GND4" gate="1" x="115.57" y="-15.24" smashed="yes">
 <attribute name="VALUE" x="113.03" y="-17.78" size="1.778" layer="96"/>
 </instance>
-<instance part="U$3" gate="G$1" x="218.44" y="17.78" smashed="yes"/>
+<instance part="U4" gate="G$1" x="218.44" y="17.78" smashed="yes"/>
 <instance part="GND9" gate="1" x="218.44" y="-10.16" smashed="yes">
 <attribute name="VALUE" x="215.9" y="-12.7" size="1.778" layer="96"/>
 </instance>
@@ -11407,7 +11495,6 @@ Source: www.cypressindustries.com</description>
 <attribute name="NAME" x="235.204" y="90.551" size="1.778" layer="95"/>
 <attribute name="VALUE" x="231.775" y="86.106" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="U$1" gate="G$1" x="157.48" y="96.52" smashed="yes"/>
 <instance part="R3" gate="G$1" x="175.26" y="81.28" smashed="yes" rot="R90">
 <attribute name="NAME" x="178.8414" y="78.994" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="173.482" y="79.248" size="1.778" layer="96" rot="R90"/>
@@ -11417,9 +11504,6 @@ Source: www.cypressindustries.com</description>
 </instance>
 <instance part="GND7" gate="1" x="157.48" y="71.12" smashed="yes">
 <attribute name="VALUE" x="154.94" y="68.58" size="1.778" layer="96"/>
-</instance>
-<instance part="GND8" gate="1" x="182.88" y="71.12" smashed="yes">
-<attribute name="VALUE" x="180.34" y="68.58" size="1.778" layer="96"/>
 </instance>
 <instance part="GND12" gate="1" x="203.2" y="71.12" smashed="yes">
 <attribute name="VALUE" x="200.66" y="68.58" size="1.778" layer="96"/>
@@ -11456,6 +11540,10 @@ Source: www.cypressindustries.com</description>
 <instance part="GND16" gate="1" x="89.662" y="71.12" smashed="yes">
 <attribute name="VALUE" x="87.122" y="68.58" size="1.778" layer="96"/>
 </instance>
+<instance part="U2" gate="G$1" x="157.48" y="96.52" smashed="yes"/>
+<instance part="GND8" gate="1" x="182.88" y="71.12" smashed="yes">
+<attribute name="VALUE" x="180.34" y="68.58" size="1.778" layer="96"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -11467,7 +11555,7 @@ Source: www.cypressindustries.com</description>
 <wire x1="177.8" y1="10.16" x2="177.8" y2="-5.08" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="U$2" gate="G$1" pin="GND"/>
+<pinref part="U3" gate="G$1" pin="GND"/>
 <wire x1="106.68" y1="10.16" x2="107.95" y2="10.16" width="0.1524" layer="91"/>
 <wire x1="107.95" y1="10.16" x2="107.95" y2="-12.7" width="0.1524" layer="91"/>
 <pinref part="GND11" gate="1" pin="GND"/>
@@ -11478,7 +11566,7 @@ Source: www.cypressindustries.com</description>
 <pinref part="GND4" gate="1" pin="GND"/>
 </segment>
 <segment>
-<pinref part="U$3" gate="G$1" pin="GND"/>
+<pinref part="U4" gate="G$1" pin="GND"/>
 <pinref part="GND9" gate="1" pin="GND"/>
 <wire x1="218.44" y1="7.62" x2="218.44" y2="5.08" width="0.1524" layer="91"/>
 <pinref part="C3" gate="G$1" pin="2"/>
@@ -11508,20 +11596,14 @@ Source: www.cypressindustries.com</description>
 <wire x1="7.62" y1="-12.7" x2="7.62" y2="17.78" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="GND"/>
 <pinref part="GND7" gate="1" pin="GND"/>
 <wire x1="157.48" y1="81.28" x2="157.48" y2="73.66" width="0.1524" layer="91"/>
+<pinref part="U2" gate="G$1" pin="GND"/>
 </segment>
 <segment>
 <pinref part="GND6" gate="1" pin="GND"/>
 <pinref part="R3" gate="G$1" pin="1"/>
 <wire x1="175.26" y1="73.66" x2="175.26" y2="76.2" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="U$1" gate="G$1" pin="TEMP"/>
-<pinref part="GND8" gate="1" pin="GND"/>
-<wire x1="172.72" y1="93.98" x2="182.88" y2="93.98" width="0.1524" layer="91"/>
-<wire x1="182.88" y1="93.98" x2="182.88" y2="73.66" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="LIFEPO4" gate="J$1" pin="1"/>
@@ -11550,6 +11632,12 @@ Source: www.cypressindustries.com</description>
 <wire x1="89.662" y1="73.66" x2="89.662" y2="93.98" width="0.1524" layer="91"/>
 <wire x1="89.662" y1="93.98" x2="91.44" y2="93.98" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="GND8" gate="1" pin="GND"/>
+<pinref part="U2" gate="G$1" pin="TEMP"/>
+<wire x1="182.88" y1="73.66" x2="182.88" y2="93.98" width="0.1524" layer="91"/>
+<wire x1="182.88" y1="93.98" x2="172.72" y2="93.98" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="3.3V" class="0">
 <segment>
@@ -11569,15 +11657,15 @@ Source: www.cypressindustries.com</description>
 <pinref part="C5" gate="G$1" pin="1"/>
 <wire x1="224.282" y1="92.964" x2="224.282" y2="104.14" width="0.1524" layer="91"/>
 <junction x="224.282" y="104.14"/>
-<pinref part="U$1" gate="G$1" pin="FB"/>
 <wire x1="203.2" y1="104.14" x2="172.72" y2="104.14" width="0.1524" layer="91"/>
 <junction x="203.2" y="104.14"/>
-<pinref part="U$1" gate="G$1" pin="BAT"/>
 <wire x1="172.72" y1="99.06" x2="172.72" y2="104.14" width="0.1524" layer="91"/>
+<pinref part="U2" gate="G$1" pin="BAT"/>
+<pinref part="U2" gate="G$1" pin="FB"/>
 <junction x="172.72" y="104.14"/>
 </segment>
 <segment>
-<pinref part="U$2" gate="G$1" pin="VCC"/>
+<pinref part="U3" gate="G$1" pin="VCC"/>
 <pinref part="SUPPLY14" gate="P" pin="3.3V"/>
 <wire x1="39.37" y1="10.16" x2="39.37" y2="45.72" width="0.1524" layer="91"/>
 <wire x1="58.42" y1="10.16" x2="39.37" y2="10.16" width="0.1524" layer="91"/>
@@ -11604,7 +11692,7 @@ Source: www.cypressindustries.com</description>
 </segment>
 <segment>
 <pinref part="SUPPLY3" gate="P" pin="3.3V"/>
-<pinref part="U$3" gate="G$1" pin="VCC"/>
+<pinref part="U4" gate="G$1" pin="VCC"/>
 <wire x1="218.44" y1="30.48" x2="218.44" y2="27.94" width="0.1524" layer="91"/>
 <pinref part="C3" gate="G$1" pin="1"/>
 <wire x1="218.44" y1="27.94" x2="235.458" y2="27.94" width="0.1524" layer="91"/>
@@ -11630,7 +11718,7 @@ Source: www.cypressindustries.com</description>
 <wire x1="182.88" y1="20.32" x2="182.88" y2="38.1" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="U$2" gate="G$1" pin="RXD0_GPIO3"/>
+<pinref part="U3" gate="G$1" pin="RXD0_GPIO3"/>
 <wire x1="106.68" y1="25.4" x2="145.415" y2="25.4" width="0.1524" layer="91"/>
 <label x="145.415" y="25.4" size="1.778" layer="95" xref="yes"/>
 </segment>
@@ -11643,14 +11731,14 @@ Source: www.cypressindustries.com</description>
 <wire x1="187.96" y1="17.78" x2="187.96" y2="38.1" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="U$2" gate="G$1" pin="TXD0_GPIO1"/>
+<pinref part="U3" gate="G$1" pin="TXD0_GPIO1"/>
 <wire x1="106.68" y1="27.94" x2="137.16" y2="27.94" width="0.1524" layer="91"/>
 <label x="137.16" y="27.94" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="N$8" class="0">
 <segment>
-<pinref part="U$2" gate="G$1" pin="ENABLE"/>
+<pinref part="U3" gate="G$1" pin="ENABLE"/>
 <pinref part="R11" gate="G$1" pin="1"/>
 <wire x1="58.42" y1="22.86" x2="45.72" y2="22.86" width="0.1524" layer="91"/>
 <wire x1="45.72" y1="22.86" x2="45.72" y2="33.02" width="0.1524" layer="91"/>
@@ -11658,19 +11746,19 @@ Source: www.cypressindustries.com</description>
 </net>
 <net name="RGB" class="0">
 <segment>
-<pinref part="U$3" gate="G$1" pin="DIN"/>
+<pinref part="U4" gate="G$1" pin="DIN"/>
 <wire x1="205.74" y1="17.78" x2="205.74" y2="38.1" width="0.1524" layer="91"/>
 <label x="205.74" y="38.1" size="1.778" layer="95" rot="R90" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U$2" gate="G$1" pin="SCL_GPIO5"/>
+<pinref part="U3" gate="G$1" pin="SCL_GPIO5"/>
 <wire x1="106.68" y1="22.86" x2="137.16" y2="22.86" width="0.1524" layer="91"/>
 <label x="137.16" y="22.86" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="N$1" class="0">
 <segment>
-<pinref part="U$2" gate="G$1" pin="CS_TXD2_GPIO15"/>
+<pinref part="U3" gate="G$1" pin="CS_TXD2_GPIO15"/>
 <pinref part="R2" gate="G$1" pin="2"/>
 <wire x1="115.57" y1="4.572" x2="115.57" y2="12.7" width="0.1524" layer="91"/>
 <wire x1="115.57" y1="12.7" x2="106.68" y2="12.7" width="0.1524" layer="91"/>
@@ -11678,7 +11766,7 @@ Source: www.cypressindustries.com</description>
 </net>
 <net name="N$2" class="0">
 <segment>
-<pinref part="U$2" gate="G$1" pin="TXD1_GPIO2"/>
+<pinref part="U3" gate="G$1" pin="TXD1_GPIO2"/>
 <pinref part="R12" gate="G$1" pin="1"/>
 <wire x1="106.68" y1="15.24" x2="115.57" y2="15.24" width="0.1524" layer="91"/>
 <wire x1="115.57" y1="15.24" x2="115.57" y2="33.02" width="0.1524" layer="91"/>
@@ -11687,7 +11775,7 @@ Source: www.cypressindustries.com</description>
 <net name="N$3" class="0">
 <segment>
 <pinref part="S4" gate="G$1" pin="1"/>
-<pinref part="U$2" gate="G$1" pin="FLASH_GPIO0"/>
+<pinref part="U3" gate="G$1" pin="FLASH_GPIO0"/>
 <wire x1="134.747" y1="5.334" x2="134.747" y2="17.78" width="0.1524" layer="91"/>
 <wire x1="134.747" y1="17.78" x2="134.62" y2="17.78" width="0.1524" layer="91"/>
 <pinref part="R1" gate="G$1" pin="1"/>
@@ -11698,7 +11786,7 @@ Source: www.cypressindustries.com</description>
 </net>
 <net name="N$4" class="0">
 <segment>
-<pinref part="U$2" gate="G$1" pin="SDA_GPIO4"/>
+<pinref part="U3" gate="G$1" pin="SDA_GPIO4"/>
 <pinref part="JMP1" gate="1" pin="2"/>
 <wire x1="106.68" y1="20.32" x2="124.46" y2="20.32" width="0.1524" layer="91"/>
 <wire x1="124.46" y1="20.32" x2="124.46" y2="5.08" width="0.1524" layer="91"/>
@@ -11723,7 +11811,7 @@ Source: www.cypressindustries.com</description>
 <wire x1="33.02" y1="20.828" x2="33.02" y2="27.94" width="0.1524" layer="91"/>
 <junction x="33.02" y="27.94"/>
 <wire x1="58.42" y1="27.94" x2="54.61" y2="27.94" width="0.1524" layer="91"/>
-<pinref part="U$2" gate="G$1" pin="RST"/>
+<pinref part="U3" gate="G$1" pin="RST"/>
 <pinref part="R10" gate="G$1" pin="1"/>
 <wire x1="54.61" y1="27.94" x2="33.02" y2="27.94" width="0.1524" layer="91"/>
 <wire x1="54.61" y1="33.02" x2="54.61" y2="27.94" width="0.1524" layer="91"/>
@@ -11732,15 +11820,14 @@ Source: www.cypressindustries.com</description>
 </net>
 <net name="N$6" class="0">
 <segment>
-<pinref part="U$1" gate="G$1" pin="ISET"/>
 <pinref part="R3" gate="G$1" pin="2"/>
 <wire x1="172.72" y1="88.9" x2="175.26" y2="88.9" width="0.1524" layer="91"/>
 <wire x1="175.26" y1="88.9" x2="175.26" y2="86.36" width="0.1524" layer="91"/>
+<pinref part="U2" gate="G$1" pin="ISET"/>
 </segment>
 </net>
-<net name="N$10" class="0">
+<net name="VIN" class="0">
 <segment>
-<pinref part="U$1" gate="G$1" pin="VIN"/>
 <pinref part="R4" gate="G$1" pin="2"/>
 <wire x1="157.48" y1="111.76" x2="157.48" y2="114.3" width="0.1524" layer="91"/>
 <wire x1="157.48" y1="114.3" x2="132.08" y2="114.3" width="0.1524" layer="91"/>
@@ -11753,6 +11840,7 @@ Source: www.cypressindustries.com</description>
 <junction x="115.062" y="114.3"/>
 <wire x1="91.44" y1="101.6" x2="89.662" y2="101.6" width="0.1524" layer="91"/>
 <wire x1="89.662" y1="101.6" x2="89.662" y2="114.3" width="0.1524" layer="91"/>
+<pinref part="U2" gate="G$1" pin="VIN"/>
 </segment>
 </net>
 <net name="N$11" class="0">
@@ -11768,31 +11856,28 @@ Source: www.cypressindustries.com</description>
 <net name="N$12" class="0">
 <segment>
 <pinref part="L2" gate="G$1" pin="C"/>
-<pinref part="U$1" gate="G$1" pin="CHRG"/>
 <wire x1="137.16" y1="96.52" x2="137.16" y2="93.98" width="0.1524" layer="91"/>
 <wire x1="137.16" y1="93.98" x2="142.24" y2="93.98" width="0.1524" layer="91"/>
+<pinref part="U2" gate="G$1" pin="CHRG"/>
 </segment>
 </net>
 <net name="N$13" class="0">
 <segment>
 <pinref part="L1" gate="G$1" pin="C"/>
-<pinref part="U$1" gate="G$1" pin="DONE"/>
 <wire x1="127" y1="96.52" x2="127" y2="88.9" width="0.1524" layer="91"/>
 <wire x1="127" y1="88.9" x2="142.24" y2="88.9" width="0.1524" layer="91"/>
+<pinref part="U2" gate="G$1" pin="DONE"/>
 </segment>
 </net>
 </nets>
 </sheet>
 </sheets>
 <errors>
-<approved hash="104,1,101.6,109.22,U2,OUT,3.3V,,,"/>
-<approved hash="104,1,73.66,106.68,U3,+5V,5.0V,,,"/>
-<approved hash="104,1,132.08,20.32,U4,VDD,3.3V,,,"/>
-<approved hash="104,1,226.06,7.62,U$1,VIN,5.0V,,,"/>
-<approved hash="204,1,193.04,7.62,U$1,VO,,,,"/>
-<approved hash="202,1,30.48,33.02,U$2,ADC0,,,,"/>
-<approved hash="104,1,30.48,17.78,U$2,VCC,3.3V,,,"/>
-<approved hash="113,1,122.618,43.711,FRAME1,,,,,"/>
+<approved hash="102,1,7.62,38.1,VDD,3.3V,,,,"/>
+<approved hash="202,1,58.42,25.4,U3,ADC0,,,,"/>
+<approved hash="104,1,58.42,10.16,U3,VCC,3.3V,,,"/>
+<approved hash="113,1,119.911,43.711,FRAME1,,,,,"/>
+<approved hash="113,1,125.849,0,JMP1,,,,,"/>
 </errors>
 </schematic>
 </drawing>
