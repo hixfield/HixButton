@@ -19,7 +19,15 @@ A simple ESP8266 based WiFi IoT button.
 - [x] external NO connector to have external input (over RST switch)
 - [x] External FTDI programming connector 
 - [x] LiFePO4 under voltage protection
-- [ ] Replace the big elco cap to multiple tantilums to not be so high
+- [x] Replace the big elco cap to multiple tantilums to not be so high
+- [x] connect ftdi to 5v (its not 3.3) and use this as charging connector
+- [ ] update the esp part to include exclude routing zones
+- [ ] rgb led part no uxxx and type
+- [ ] charging chip no uxxx and type
+- [ ] adjust charging resistor
+- [ ] use power and signal nets in sch and then test if these are used for pcb routing
+- [ ] change push switch type?
+- [ ] battery + - on other sides of the pcb?
 - [ ] lets order a stencel for the PCB to test it :)
   
 ### LiFePO4 charging
