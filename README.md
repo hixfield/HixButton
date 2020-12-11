@@ -15,18 +15,23 @@ A simple ESP8266 based WiFi IoT button.
 - Fast WiFi connection establish techniques (e.g. fixed ip) to make button responsive
 
 ## Improvements
+
+- [x] external NO connector to have external input (over RST switch)
+- [x] External FTDI programming connector 
+- [x] LiFePO4 under voltage protection
+- [ ] Replace the big elco cap to multiple tantilums to not be so high
 - [ ] lets order a stencel for the PCB to test it :)
-- [ ] LiFe PO4 charging, undervoltage and overvoltage protection circutry
-- [ ] External charging connector (USB-C?)
-- [ ] External FTDI programming connector 
+  
+### LiFePO4 charging
+
+- [ ] LiFePO4 bat charging circutry (add external connector)
 - [ ] FTDI power is always 5V, this could also be connected to the battery charging so its also possible to charge that way
 - [ ] mind back powering (no feeding power INTO a power input for somewhere else...) as we have 3 possible power sources (1)battery (2)charging connector (3)FTDI => include diodes everywhere?
-- [ ] Don't go to sleep if (1)FTDI plugged-in (2)charing power applied
-- [ ] Add external connector to plug in external switch contact (parallel to the current reset switch to wakeup). As a way to more generic use it e.g. for "there is physical mail"
 
 ## Will not do
 - [ ] We don't really want to pug a CH340 USB serial on it (to complex for once programming)
 - [ ] OTA programming
+- [ ] Don't go to sleep if (1)FTDI plugged-in (2)charing power applied
 
 
 ## Schematic
