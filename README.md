@@ -7,10 +7,11 @@ A simple ESP8266 based WiFi IoT button.
 ## Features
 
 - Powered by a single LiFePo4 battery
+- Onboarding charging circuit based on CN3058E powered via the FTDI connector's 5V
+- Charging current set as `I = 1.205/R3` (schematic lists 5.6K which is approx 200mA to keep things cool)
 - Contains an RGB led (to signal battery status when pressed)
 - Solder jumper to keep module awake (during debugging)
-- FTDI programming header
-- Puts the ESP in a super deep sleep after pressing the button to conserve battery power.
+- Puts the ESP in a deep sleep after pressing the button to conserve battery power.
 - Firmware sends a json formatted datagram (using UDP) to any configurable server (eg. nodred running on Raspi)
 - Fast WiFi connection establish techniques (e.g. fixed ip) to make button responsive
 
@@ -21,26 +22,32 @@ A simple ESP8266 based WiFi IoT button.
 - [x] LiFePO4 under voltage protection
 - [x] Replace the big elco cap to multiple tantilums to not be so high
 - [x] connect ftdi to 5v (its not 3.3) and use this as charging connector
-- [ ] update the esp part to include exclude routing zones
-- [ ] rgb led part no uxxx and type
-- [ ] charging chip no uxxx and type
-- [ ] adjust charging resistor
-- [ ] use power and signal nets in sch and then test if these are used for pcb routing
-- [ ] change push switch type?
-- [ ] battery + - on other sides of the pcb?
-- [ ] lets order a stencel for the PCB to test it :)
+- [x] rgb led part no uxxx and type
+- [x] charging chip no uxxx and type
+- [x] adjust charging resistor
+- [x] use power and signal nets in sch and then test if these are used for pcb routing
+- [x] lets order a stencel for the PCB to test it :)
+- [ ] OTA programming
   
 ### LiFePO4 charging
 
-- [ ] LiFePO4 bat charging circutry (add external connector)
-- [ ] FTDI power is always 5V, this could also be connected to the battery charging so its also possible to charge that way
-- [ ] mind back powering (no feeding power INTO a power input for somewhere else...) as we have 3 possible power sources (1)battery (2)charging connector (3)FTDI => include diodes everywhere?
+- [x] LiFePO4 bat charging circutry (add external connector)
+- [x] FTDI power is always 5V, this could also be connected to the battery charging so its also possible to charge that way
+- [x] mind back powering (no feeding power INTO a power input for somewhere else...) as we have 3 possible power sources (1)battery (2)charging connector (3)FTDI => include diodes everywhere?
 
 ## Will not do
-- [ ] We don't really want to pug a CH340 USB serial on it (to complex for once programming)
-- [ ] OTA programming
-- [ ] Don't go to sleep if (1)FTDI plugged-in (2)charing power applied
-
+- [x] We don't really want to pug a CH340 USB serial on it (to complex for once programming)
+- [x] Don't go to sleep if (1)FTDI plugged-in (2)charing power applied
+- [x] update the esp part to include exclude routing zones
+- [x] change push switch type?
 
 ## Schematic
 ![HixButon schematic](hardware/images/schematic.png)
+
+## PCB
+
+### Top
+![HixButon pbb top](hardware/images/pcb_top.png)
+
+### Bottom
+![HixButon pbb bottom](hardware/images/pcb_bottom.png)
