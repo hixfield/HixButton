@@ -19667,8 +19667,8 @@ Source: www.kingbright.com</description>
 </spice>
 </part>
 <part name="GND10" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="L2" library="led" library_urn="urn:adsk.eagle:library:259" deviceset="LED" device="CHIPLED_1206" package3d_urn="urn:adsk.eagle:package:15823/2" value="RED"/>
-<part name="L1" library="led" library_urn="urn:adsk.eagle:library:259" deviceset="LED" device="CHIPLED_1206" package3d_urn="urn:adsk.eagle:package:15823/2" value="GRN"/>
+<part name="L2(RED)" library="led" library_urn="urn:adsk.eagle:library:259" deviceset="LED" device="CHIPLED_1206" package3d_urn="urn:adsk.eagle:package:15823/2" value="RED"/>
+<part name="L1(GRN)" library="led" library_urn="urn:adsk.eagle:library:259" deviceset="LED" device="CHIPLED_1206" package3d_urn="urn:adsk.eagle:package:15823/2" value="GRN"/>
 <part name="R4" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R1206" package3d_urn="urn:adsk.eagle:package:23540/2" value="330"/>
 <part name="GND8" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="PROG" library="jumper" library_urn="urn:adsk.eagle:library:252" deviceset="SJ" device="" package3d_urn="urn:adsk.eagle:package:15471/1"/>
@@ -19845,11 +19845,11 @@ Source: www.kingbright.com</description>
 <instance part="GND10" gate="1" x="63.5" y="71.12" smashed="yes">
 <attribute name="VALUE" x="60.96" y="68.58" size="1.778" layer="96"/>
 </instance>
-<instance part="L2" gate="G$1" x="86.36" y="101.6" smashed="yes">
+<instance part="L2(RED)" gate="G$1" x="86.36" y="101.6" smashed="yes">
 <attribute name="NAME" x="89.662" y="104.14" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="91.948" y="97.663" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="L1" gate="G$1" x="76.2" y="101.6" smashed="yes">
+<instance part="L1(GRN)" gate="G$1" x="76.2" y="101.6" smashed="yes">
 <attribute name="NAME" x="75.184" y="104.14" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="75.692" y="97.409" size="1.778" layer="96" rot="R180"/>
 </instance>
@@ -20230,16 +20230,16 @@ Source: www.kingbright.com</description>
 <net name="N$11" class="2">
 <segment>
 <pinref part="R4" gate="G$1" pin="1"/>
-<pinref part="L2" gate="G$1" pin="A"/>
+<pinref part="L2(RED)" gate="G$1" pin="A"/>
 <wire x1="81.28" y1="104.14" x2="86.36" y2="104.14" width="0.1524" layer="91"/>
-<pinref part="L1" gate="G$1" pin="A"/>
+<pinref part="L1(GRN)" gate="G$1" pin="A"/>
 <wire x1="81.28" y1="104.14" x2="76.2" y2="104.14" width="0.1524" layer="91"/>
 <junction x="81.28" y="104.14"/>
 </segment>
 </net>
 <net name="N$12" class="2">
 <segment>
-<pinref part="L2" gate="G$1" pin="C"/>
+<pinref part="L2(RED)" gate="G$1" pin="C"/>
 <wire x1="86.36" y1="96.52" x2="86.36" y2="93.98" width="0.1524" layer="91"/>
 <wire x1="86.36" y1="93.98" x2="91.44" y2="93.98" width="0.1524" layer="91"/>
 <pinref part="U3" gate="G$1" pin="CHRG"/>
@@ -20247,7 +20247,7 @@ Source: www.kingbright.com</description>
 </net>
 <net name="N$13" class="2">
 <segment>
-<pinref part="L1" gate="G$1" pin="C"/>
+<pinref part="L1(GRN)" gate="G$1" pin="C"/>
 <wire x1="76.2" y1="96.52" x2="76.2" y2="88.9" width="0.1524" layer="91"/>
 <wire x1="76.2" y1="88.9" x2="91.44" y2="88.9" width="0.1524" layer="91"/>
 <pinref part="U3" gate="G$1" pin="DONE"/>
