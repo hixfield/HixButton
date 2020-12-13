@@ -41,13 +41,11 @@ A simple ESP8266 based WiFi IoT button.
 - [x] update the esp part to include exclude routing zones, not required as its hanging over the edge of the pcb
 - [x] change push switch type, the one we have should do the trick
 
-## Schematic
-![HixButon schematic](hardware/images/schematic.png)
+# Hardware
 
-## PCB
+[Click here for hardware information](hardware/README.md)
 
-### Top
-![HixButon pbb top](hardware/images/pcb_top.png)
+# Software
 
-### Bottom
-![HixButon pbb bottom](hardware/images/pcb_bottom.png)
+[Click here for software information](software/README.md)
+

@@ -388,6 +388,64 @@ Source: http://www.rohm.com/products/databook/motor/pdf/bd623x_series-e.pdf</des
 <smd name="2" x="-2.45" y="-1.6" dx="1" dy="1.5" layer="1" rot="R90"/>
 <smd name="3" x="2.45" y="-1.6" dx="1" dy="1.5" layer="1" rot="R90"/>
 </package>
+<package name="FTDI_ANGLED" urn="urn:adsk.eagle:footprint:25353500/5" library_version="40">
+<description>Single-row, 6-pin Pin Header (Male) Right Angle, 2.54 mm (0.10 in) col pitch, 5.84 mm mating length, 10.16 X 2.54 X 5.56 mm body
+&lt;p&gt;Single-row (1X6), 6-pin Pin Header (Male) Right Angle package with 2.54 mm (0.10 in) col pitch, 0.64 mm lead width, 3.00 mm tail length and 5.84 mm mating length with body size 10.16 X 2.54 X 5.56 mm, pin pattern - clockwise from top left&lt;/p&gt;</description>
+<pad name="RXD" x="0" y="0" drill="1" diameter="1.6764"/>
+<pad name="TXD" x="0" y="2.54" drill="1" diameter="1.6764"/>
+<pad name="5V" x="0" y="5.08" drill="1" diameter="1.6764"/>
+<pad name="CTS" x="0" y="7.62" drill="1" diameter="1.6764"/>
+<pad name="GND" x="0" y="10.16" drill="1" diameter="1.6764"/>
+<pad name="DTR" x="0" y="-2.54" drill="1" diameter="1.6764"/>
+<wire x1="-1.27" y1="11.43" x2="1.27" y2="11.43" width="0.127" layer="21"/>
+<wire x1="1.27" y1="11.43" x2="1.27" y2="10.16" width="0.127" layer="21"/>
+<wire x1="1.27" y1="10.16" x2="1.27" y2="7.62" width="0.127" layer="21"/>
+<wire x1="1.27" y1="7.62" x2="1.27" y2="5.08" width="0.127" layer="21"/>
+<wire x1="1.27" y1="5.08" x2="1.27" y2="0" width="0.127" layer="21"/>
+<wire x1="1.27" y1="0" x2="1.27" y2="-2.54" width="0.127" layer="21"/>
+<wire x1="1.27" y1="-2.54" x2="1.27" y2="-3.81" width="0.127" layer="21"/>
+<wire x1="1.27" y1="-3.81" x2="-1.27" y2="-3.81" width="0.127" layer="21"/>
+<wire x1="-1.27" y1="-3.81" x2="-1.27" y2="11.43" width="0.127" layer="21"/>
+<wire x1="2.032" y1="11.43" x2="2.032" y2="10.16" width="0.127" layer="21"/>
+<wire x1="2.032" y1="10.16" x2="2.032" y2="8.89" width="0.127" layer="21"/>
+<wire x1="2.032" y1="8.89" x2="2.032" y2="7.62" width="0.127" layer="21"/>
+<wire x1="2.032" y1="7.62" x2="2.032" y2="6.35" width="0.127" layer="21"/>
+<wire x1="2.032" y1="6.35" x2="2.032" y2="5.08" width="0.127" layer="21"/>
+<wire x1="2.032" y1="5.08" x2="2.032" y2="3.81" width="0.127" layer="21"/>
+<wire x1="2.032" y1="3.81" x2="2.032" y2="2.54" width="0.127" layer="21"/>
+<wire x1="2.032" y1="2.54" x2="2.032" y2="1.27" width="0.127" layer="21"/>
+<wire x1="2.032" y1="1.27" x2="2.032" y2="0" width="0.127" layer="21"/>
+<wire x1="2.032" y1="0" x2="2.032" y2="-1.27" width="0.127" layer="21"/>
+<wire x1="2.032" y1="-1.27" x2="2.032" y2="-2.54" width="0.127" layer="21"/>
+<wire x1="2.032" y1="-2.54" x2="2.032" y2="-3.81" width="0.127" layer="21"/>
+<wire x1="2.032" y1="-3.81" x2="9.652" y2="-3.81" width="0.127" layer="21"/>
+<wire x1="9.652" y1="-3.81" x2="9.652" y2="-1.27" width="0.127" layer="21"/>
+<wire x1="9.652" y1="-1.27" x2="9.652" y2="1.27" width="0.127" layer="21"/>
+<wire x1="9.652" y1="1.27" x2="9.652" y2="3.81" width="0.127" layer="21"/>
+<wire x1="9.652" y1="3.81" x2="9.652" y2="6.35" width="0.127" layer="21"/>
+<wire x1="9.652" y1="6.35" x2="9.652" y2="8.89" width="0.127" layer="21"/>
+<wire x1="9.652" y1="8.89" x2="9.652" y2="11.43" width="0.127" layer="21"/>
+<wire x1="9.652" y1="11.43" x2="2.032" y2="11.43" width="0.127" layer="21"/>
+<wire x1="2.032" y1="8.89" x2="9.652" y2="8.89" width="0.0762" layer="21"/>
+<wire x1="2.032" y1="6.35" x2="9.652" y2="6.35" width="0.0762" layer="21"/>
+<wire x1="9.652" y1="3.81" x2="2.032" y2="3.81" width="0.0762" layer="21"/>
+<wire x1="2.032" y1="1.27" x2="9.652" y2="1.27" width="0.0762" layer="21"/>
+<wire x1="2.032" y1="-1.27" x2="9.652" y2="-1.27" width="0.0762" layer="21"/>
+<wire x1="2.032" y1="-2.54" x2="1.27" y2="-2.54" width="0.0762" layer="21"/>
+<wire x1="2.032" y1="0" x2="1.27" y2="0" width="0.0762" layer="21"/>
+<wire x1="1.27" y1="0" x2="1.27" y2="2.54" width="0.0762" layer="21"/>
+<wire x1="1.27" y1="2.54" x2="2.032" y2="2.54" width="0.0762" layer="21"/>
+<wire x1="2.032" y1="5.08" x2="1.27" y2="5.08" width="0.0762" layer="21"/>
+<wire x1="2.032" y1="7.62" x2="1.27" y2="7.62" width="0.0762" layer="21"/>
+<wire x1="2.032" y1="10.16" x2="1.27" y2="10.16" width="0.0762" layer="21"/>
+<text x="-4.445" y="3.81" size="1.016" layer="25" distance="38" rot="R90" align="center">&gt;NAME</text>
+<text x="-1.905" y="10.16" size="0.635" layer="21" rot="R90" align="center">GND</text>
+<text x="-1.905" y="7.62" size="0.635" layer="21" rot="R90" align="center">CTS</text>
+<text x="-1.905" y="5.08" size="0.635" layer="21" rot="R90" align="center">5V</text>
+<text x="-1.905" y="2.54" size="0.635" layer="21" rot="R90" align="center">TXD</text>
+<text x="-1.905" y="0" size="0.635" layer="21" rot="R90" align="center">RXD</text>
+<text x="-1.905" y="-2.54" size="0.635" layer="21" rot="R90" align="center">DTR</text>
+</package>
 </packages>
 <packages3d>
 <package3d name="ESP8266(ESP12E)" urn="urn:adsk.eagle:package:12836033/3" type="model" library_version="8">
@@ -439,6 +497,13 @@ Source: http://www.rohm.com/products/databook/motor/pdf/bd623x_series-e.pdf</des
 <package3d name="LED_5050" urn="urn:adsk.eagle:package:25237728/2" type="model" library_version="33" library_locally_modified="yes">
 <packageinstances>
 <packageinstance name="LED_5050"/>
+</packageinstances>
+</package3d>
+<package3d name="HDRRA6W64P254_1X6_1016X254X556B" urn="urn:adsk.eagle:package:25353491/8" type="model" library_version="40">
+<description>Single-row, 6-pin Pin Header (Male) Right Angle, 2.54 mm (0.10 in) col pitch, 5.84 mm mating length, 10.16 X 2.54 X 5.56 mm body
+&lt;p&gt;Single-row (1X6), 6-pin Pin Header (Male) Right Angle package with 2.54 mm (0.10 in) col pitch, 0.64 mm lead width, 3.00 mm tail length and 5.84 mm mating length with body size 10.16 X 2.54 X 5.56 mm, pin pattern - clockwise from top left&lt;/p&gt;</description>
+<packageinstances>
+<packageinstance name="FTDI_ANGLED"/>
 </packageinstances>
 </package3d>
 </packages3d>
@@ -754,7 +819,7 @@ Source: http://www.rohm.com/products/databook/motor/pdf/bd623x_series-e.pdf</des
 </device>
 </devices>
 </deviceset>
-<deviceset name="FTDI" urn="urn:adsk.eagle:component:12836075/2" prefix="J" library_version="17">
+<deviceset name="FTDI" urn="urn:adsk.eagle:component:12836075/6" prefix="J" library_version="40">
 <gates>
 <gate name="G$1" symbol="FTDI" x="25.4" y="-2.54"/>
 </gates>
@@ -770,6 +835,22 @@ Source: http://www.rohm.com/products/databook/motor/pdf/bd623x_series-e.pdf</des
 </connects>
 <package3dinstances>
 <package3dinstance package3d_urn="urn:adsk.eagle:package:12836035/3"/>
+</package3dinstances>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="FTDI_ANGLED" package="FTDI_ANGLED">
+<connects>
+<connect gate="G$1" pin="5V" pad="5V"/>
+<connect gate="G$1" pin="CTS" pad="CTS"/>
+<connect gate="G$1" pin="DTR" pad="DTR"/>
+<connect gate="G$1" pin="GND" pad="GND"/>
+<connect gate="G$1" pin="RXD" pad="RXD"/>
+<connect gate="G$1" pin="TXD" pad="TXD"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:25353491/8"/>
 </package3dinstances>
 <technologies>
 <technology name=""/>
@@ -19627,7 +19708,7 @@ Source: www.kingbright.com</description>
 </classes>
 <parts>
 <part name="SUPPLY2" library="0_HixField" library_urn="urn:adsk.eagle:library:13392178" deviceset="3.3V" device=""/>
-<part name="J1" library="0_HixField" library_urn="urn:adsk.eagle:library:13392178" deviceset="FTDI" device="" package3d_urn="urn:adsk.eagle:package:12836035/3"/>
+<part name="J1" library="0_HixField" library_urn="urn:adsk.eagle:library:13392178" deviceset="FTDI" device="FTDI_ANGLED" package3d_urn="urn:adsk.eagle:package:25353491/8" value="FTDIFTDI_ANGLED"/>
 <part name="GND3" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="FRAME1" library="frames" library_urn="urn:adsk.eagle:library:229" deviceset="A4L-LOC" device=""/>
 <part name="U1" library="0_HixField" library_urn="urn:adsk.eagle:library:13392178" deviceset="ESP8266(ESP12E)V2" device="" package3d_urn="urn:adsk.eagle:package:12836033/3"/>

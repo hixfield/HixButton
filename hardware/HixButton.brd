@@ -8,7 +8,7 @@
 </settings>
 <grid distance="50" unitdist="mil" unit="mil" style="lines" multiple="1" display="no" altdistance="5" altunitdist="mil" altunit="mil"/>
 <layers>
-<layer number="1" name="Top" color="4" fill="1" visible="no" active="yes"/>
+<layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="16" fill="1" visible="no" active="no"/>
 <layer number="3" name="Route3" color="17" fill="1" visible="no" active="no"/>
 <layer number="4" name="Route4" color="18" fill="1" visible="no" active="no"/>
@@ -25,17 +25,17 @@
 <layer number="15" name="Route15" color="23" fill="1" visible="no" active="no"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
 <layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
-<layer number="18" name="Vias" color="2" fill="1" visible="no" active="yes"/>
-<layer number="19" name="Unrouted" color="6" fill="1" visible="no" active="yes"/>
+<layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
+<layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
 <layer number="20" name="Dimension" color="24" fill="1" visible="yes" active="yes"/>
-<layer number="21" name="tPlace" color="7" fill="1" visible="no" active="yes"/>
-<layer number="22" name="bPlace" color="7" fill="1" visible="no" active="yes"/>
-<layer number="23" name="tOrigins" color="15" fill="1" visible="no" active="yes"/>
-<layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="yes"/>
-<layer number="25" name="tNames" color="7" fill="1" visible="no" active="yes"/>
+<layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="27" name="tValues" color="7" fill="1" visible="no" active="yes"/>
-<layer number="28" name="bValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="28" name="bValues" color="7" fill="1" visible="no" active="yes"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
 <layer number="31" name="tCream" color="7" fill="4" visible="no" active="yes"/>
@@ -46,10 +46,10 @@
 <layer number="36" name="bGlue" color="7" fill="5" visible="no" active="yes"/>
 <layer number="37" name="tTest" color="7" fill="1" visible="no" active="yes"/>
 <layer number="38" name="bTest" color="7" fill="1" visible="no" active="yes"/>
-<layer number="39" name="tKeepout" color="4" fill="11" visible="no" active="yes"/>
-<layer number="40" name="bKeepout" color="1" fill="11" visible="no" active="yes"/>
-<layer number="41" name="tRestrict" color="4" fill="10" visible="no" active="yes"/>
-<layer number="42" name="bRestrict" color="1" fill="10" visible="no" active="yes"/>
+<layer number="39" name="tKeepout" color="4" fill="11" visible="yes" active="yes"/>
+<layer number="40" name="bKeepout" color="1" fill="11" visible="yes" active="yes"/>
+<layer number="41" name="tRestrict" color="4" fill="10" visible="yes" active="yes"/>
+<layer number="42" name="bRestrict" color="1" fill="10" visible="yes" active="yes"/>
 <layer number="43" name="vRestrict" color="2" fill="10" visible="no" active="yes"/>
 <layer number="44" name="Drills" color="7" fill="1" visible="no" active="yes"/>
 <layer number="45" name="Holes" color="7" fill="1" visible="no" active="yes"/>
@@ -58,7 +58,7 @@
 <layer number="48" name="Document" color="7" fill="1" visible="no" active="yes"/>
 <layer number="49" name="Reference" color="7" fill="1" visible="no" active="yes"/>
 <layer number="50" name="dxf" color="7" fill="1" visible="no" active="no"/>
-<layer number="51" name="tDocu" color="7" fill="1" visible="no" active="yes"/>
+<layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="53" name="tGND_GNDA" color="7" fill="9" visible="no" active="no"/>
 <layer number="54" name="bGND_GNDA" color="1" fill="9" visible="no" active="no"/>
@@ -150,6 +150,7 @@
 <layer number="255" name="Accent" color="7" fill="1" visible="no" active="yes"/>
 </layers>
 <board>
+<fusionsync huburn="a.cGVyc29uYWw6dWUyZDExMjg2" projecturn="a.cGVyc29uYWw6dWUyZDExMjg2IzIwMjAxMjEyMzYxODc5OTUx" f3durn="urn:adsk.wipprod:dm.lineage:ODmNFmSTTw6yJyLLxPKMkg" pcbguid="68981e99-a15c-4b3f-9ce2-2bfe9745f1f3" lastpulledtime="" lastsyncedchangeguid="" latestrevisionid="05602d83-9cca-4a3b-8386-dc293eb8931c" lastsyncedrevisionid="05602d83-9cca-4a3b-8386-dc293eb8931c" lastboardhashguid="5be2f684-2e16-bcde-2481-cb733079b963" lastpushedtime="2020-12-12T02:13:22Z" linktopcb3d="true"/>
 <plain>
 <wire x1="28.194" y1="57.15" x2="84.054" y2="57.15" width="0" layer="20"/>
 <wire x1="84.054" y1="57.15" x2="84.054" y2="77.267" width="0" layer="20"/>
@@ -1286,25 +1287,6 @@ Source: www.farnell.com/datasheets/247.pdf</description>
 </library>
 <library name="0_HixField" urn="urn:adsk.eagle:library:13392178">
 <packages>
-<package name="FTDI" urn="urn:adsk.eagle:footprint:12835993/1" library_version="17">
-<pad name="RXD" x="0" y="0" drill="1" diameter="1.6764"/>
-<pad name="TXD" x="0" y="2.54" drill="1" diameter="1.6764"/>
-<pad name="5V" x="0" y="5.08" drill="1" diameter="1.6764"/>
-<pad name="CTS" x="0" y="7.62" drill="1" diameter="1.6764"/>
-<pad name="GND" x="0" y="10.16" drill="1" diameter="1.6764"/>
-<pad name="DTR" x="0" y="-2.54" drill="1" diameter="1.6764"/>
-<wire x1="-1.27" y1="11.43" x2="1.27" y2="11.43" width="0.127" layer="21"/>
-<wire x1="1.27" y1="11.43" x2="1.27" y2="-3.81" width="0.127" layer="21"/>
-<wire x1="1.27" y1="-3.81" x2="-1.27" y2="-3.81" width="0.127" layer="21"/>
-<wire x1="-1.27" y1="-3.81" x2="-1.27" y2="11.43" width="0.127" layer="21"/>
-<text x="-1.905" y="3.81" size="1.016" layer="25" distance="38" rot="R90" align="center">&gt;NAME</text>
-<text x="1.905" y="10.16" size="0.635" layer="21" rot="R90" align="center">GND</text>
-<text x="1.905" y="7.62" size="0.635" layer="21" rot="R90" align="center">CTS</text>
-<text x="1.905" y="5.08" size="0.635" layer="21" rot="R90" align="center">5V</text>
-<text x="1.905" y="2.54" size="0.635" layer="21" rot="R90" align="center">TXD</text>
-<text x="1.905" y="0" size="0.635" layer="21" rot="R90" align="center">RXD</text>
-<text x="1.905" y="-2.54" size="0.635" layer="21" rot="R90" align="center">DTR</text>
-</package>
 <package name="XH2P" urn="urn:adsk.eagle:footprint:12835983/1" library_version="26">
 <pad name="1" x="0" y="2.54" drill="1.016" diameter="1.8796" shape="long" first="yes"/>
 <pad name="2" x="0" y="0" drill="1.016" diameter="1.8796" shape="long"/>
@@ -1465,13 +1447,66 @@ Source: http://www.rohm.com/products/databook/motor/pdf/bd623x_series-e.pdf</des
 <smd name="2" x="-2.45" y="-1.6" dx="1" dy="1.5" layer="1" rot="R90"/>
 <smd name="3" x="2.45" y="-1.6" dx="1" dy="1.5" layer="1" rot="R90"/>
 </package>
+<package name="FTDI_ANGLED" urn="urn:adsk.eagle:footprint:25353500/5" library_version="40">
+<description>Single-row, 6-pin Pin Header (Male) Right Angle, 2.54 mm (0.10 in) col pitch, 5.84 mm mating length, 10.16 X 2.54 X 5.56 mm body
+&lt;p&gt;Single-row (1X6), 6-pin Pin Header (Male) Right Angle package with 2.54 mm (0.10 in) col pitch, 0.64 mm lead width, 3.00 mm tail length and 5.84 mm mating length with body size 10.16 X 2.54 X 5.56 mm, pin pattern - clockwise from top left&lt;/p&gt;</description>
+<pad name="RXD" x="0" y="0" drill="1" diameter="1.6764"/>
+<pad name="TXD" x="0" y="2.54" drill="1" diameter="1.6764"/>
+<pad name="5V" x="0" y="5.08" drill="1" diameter="1.6764"/>
+<pad name="CTS" x="0" y="7.62" drill="1" diameter="1.6764"/>
+<pad name="GND" x="0" y="10.16" drill="1" diameter="1.6764"/>
+<pad name="DTR" x="0" y="-2.54" drill="1" diameter="1.6764"/>
+<wire x1="-1.27" y1="11.43" x2="1.27" y2="11.43" width="0.127" layer="21"/>
+<wire x1="1.27" y1="11.43" x2="1.27" y2="10.16" width="0.127" layer="21"/>
+<wire x1="1.27" y1="10.16" x2="1.27" y2="7.62" width="0.127" layer="21"/>
+<wire x1="1.27" y1="7.62" x2="1.27" y2="5.08" width="0.127" layer="21"/>
+<wire x1="1.27" y1="5.08" x2="1.27" y2="0" width="0.127" layer="21"/>
+<wire x1="1.27" y1="0" x2="1.27" y2="-2.54" width="0.127" layer="21"/>
+<wire x1="1.27" y1="-2.54" x2="1.27" y2="-3.81" width="0.127" layer="21"/>
+<wire x1="1.27" y1="-3.81" x2="-1.27" y2="-3.81" width="0.127" layer="21"/>
+<wire x1="-1.27" y1="-3.81" x2="-1.27" y2="11.43" width="0.127" layer="21"/>
+<wire x1="2.032" y1="11.43" x2="2.032" y2="10.16" width="0.127" layer="21"/>
+<wire x1="2.032" y1="10.16" x2="2.032" y2="8.89" width="0.127" layer="21"/>
+<wire x1="2.032" y1="8.89" x2="2.032" y2="7.62" width="0.127" layer="21"/>
+<wire x1="2.032" y1="7.62" x2="2.032" y2="6.35" width="0.127" layer="21"/>
+<wire x1="2.032" y1="6.35" x2="2.032" y2="5.08" width="0.127" layer="21"/>
+<wire x1="2.032" y1="5.08" x2="2.032" y2="3.81" width="0.127" layer="21"/>
+<wire x1="2.032" y1="3.81" x2="2.032" y2="2.54" width="0.127" layer="21"/>
+<wire x1="2.032" y1="2.54" x2="2.032" y2="1.27" width="0.127" layer="21"/>
+<wire x1="2.032" y1="1.27" x2="2.032" y2="0" width="0.127" layer="21"/>
+<wire x1="2.032" y1="0" x2="2.032" y2="-1.27" width="0.127" layer="21"/>
+<wire x1="2.032" y1="-1.27" x2="2.032" y2="-2.54" width="0.127" layer="21"/>
+<wire x1="2.032" y1="-2.54" x2="2.032" y2="-3.81" width="0.127" layer="21"/>
+<wire x1="2.032" y1="-3.81" x2="9.652" y2="-3.81" width="0.127" layer="21"/>
+<wire x1="9.652" y1="-3.81" x2="9.652" y2="-1.27" width="0.127" layer="21"/>
+<wire x1="9.652" y1="-1.27" x2="9.652" y2="1.27" width="0.127" layer="21"/>
+<wire x1="9.652" y1="1.27" x2="9.652" y2="3.81" width="0.127" layer="21"/>
+<wire x1="9.652" y1="3.81" x2="9.652" y2="6.35" width="0.127" layer="21"/>
+<wire x1="9.652" y1="6.35" x2="9.652" y2="8.89" width="0.127" layer="21"/>
+<wire x1="9.652" y1="8.89" x2="9.652" y2="11.43" width="0.127" layer="21"/>
+<wire x1="9.652" y1="11.43" x2="2.032" y2="11.43" width="0.127" layer="21"/>
+<wire x1="2.032" y1="8.89" x2="9.652" y2="8.89" width="0.0762" layer="21"/>
+<wire x1="2.032" y1="6.35" x2="9.652" y2="6.35" width="0.0762" layer="21"/>
+<wire x1="9.652" y1="3.81" x2="2.032" y2="3.81" width="0.0762" layer="21"/>
+<wire x1="2.032" y1="1.27" x2="9.652" y2="1.27" width="0.0762" layer="21"/>
+<wire x1="2.032" y1="-1.27" x2="9.652" y2="-1.27" width="0.0762" layer="21"/>
+<wire x1="2.032" y1="-2.54" x2="1.27" y2="-2.54" width="0.0762" layer="21"/>
+<wire x1="2.032" y1="0" x2="1.27" y2="0" width="0.0762" layer="21"/>
+<wire x1="1.27" y1="0" x2="1.27" y2="2.54" width="0.0762" layer="21"/>
+<wire x1="1.27" y1="2.54" x2="2.032" y2="2.54" width="0.0762" layer="21"/>
+<wire x1="2.032" y1="5.08" x2="1.27" y2="5.08" width="0.0762" layer="21"/>
+<wire x1="2.032" y1="7.62" x2="1.27" y2="7.62" width="0.0762" layer="21"/>
+<wire x1="2.032" y1="10.16" x2="1.27" y2="10.16" width="0.0762" layer="21"/>
+<text x="-4.445" y="3.81" size="1.016" layer="25" distance="38" rot="R90" align="center">&gt;NAME</text>
+<text x="-1.905" y="10.16" size="0.635" layer="21" rot="R90" align="center">GND</text>
+<text x="-1.905" y="7.62" size="0.635" layer="21" rot="R90" align="center">CTS</text>
+<text x="-1.905" y="5.08" size="0.635" layer="21" rot="R90" align="center">5V</text>
+<text x="-1.905" y="2.54" size="0.635" layer="21" rot="R90" align="center">TXD</text>
+<text x="-1.905" y="0" size="0.635" layer="21" rot="R90" align="center">RXD</text>
+<text x="-1.905" y="-2.54" size="0.635" layer="21" rot="R90" align="center">DTR</text>
+</package>
 </packages>
 <packages3d>
-<package3d name="FTDI" urn="urn:adsk.eagle:package:12836035/3" type="model" library_version="17">
-<packageinstances>
-<packageinstance name="FTDI"/>
-</packageinstances>
-</package3d>
 <package3d name="XH2P" urn="urn:adsk.eagle:package:12836045/3" type="model" library_version="26">
 <packageinstances>
 <packageinstance name="XH2P"/>
@@ -1506,6 +1541,13 @@ Source: http://www.rohm.com/products/databook/motor/pdf/bd623x_series-e.pdf</des
 <package3d name="LED_5050" urn="urn:adsk.eagle:package:25237728/2" type="model" library_version="33" library_locally_modified="yes">
 <packageinstances>
 <packageinstance name="LED_5050"/>
+</packageinstances>
+</package3d>
+<package3d name="HDRRA6W64P254_1X6_1016X254X556B" urn="urn:adsk.eagle:package:25353491/8" type="model" library_version="40">
+<description>Single-row, 6-pin Pin Header (Male) Right Angle, 2.54 mm (0.10 in) col pitch, 5.84 mm mating length, 10.16 X 2.54 X 5.56 mm body
+&lt;p&gt;Single-row (1X6), 6-pin Pin Header (Male) Right Angle package with 2.54 mm (0.10 in) col pitch, 0.64 mm lead width, 3.00 mm tail length and 5.84 mm mating length with body size 10.16 X 2.54 X 5.56 mm, pin pattern - clockwise from top left&lt;/p&gt;</description>
+<packageinstances>
+<packageinstance name="FTDI_ANGLED"/>
 </packageinstances>
 </package3d>
 </packages3d>
@@ -1777,7 +1819,7 @@ Source: http://www.osram.convergy.de/ ... LG_LY N971.pdf</description>
 <attribute name="POPULARITY" value="54" x="60.96" y="133.35" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="SPICEPREFIX" value="C" x="60.96" y="133.35" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
-<element name="J1" library="0_HixField" library_urn="urn:adsk.eagle:library:13392178" package="FTDI" package3d_urn="urn:adsk.eagle:package:12836035/3" value="FTDI" x="81.28" y="63.5" smashed="yes">
+<element name="J1" library="0_HixField" library_urn="urn:adsk.eagle:library:13392178" package="FTDI_ANGLED" package3d_urn="urn:adsk.eagle:package:25353491/8" value="FTDIFTDI_ANGLED" x="81.28" y="63.5" smashed="yes">
 <attribute name="NAME" x="81.407" y="58.547" size="0.762" layer="25" rot="R180" align="center"/>
 </element>
 <element name="STAYAWAKE" library="jumper" library_urn="urn:adsk.eagle:library:252" package="SJ" package3d_urn="urn:adsk.eagle:package:15471/1" value="" x="57.15" y="74.93" smashed="yes">
@@ -2295,6 +2337,11 @@ Source: http://www.osram.convergy.de/ ... LG_LY N971.pdf</description>
 Since Version 8.2, EAGLE supports online libraries. The ids
 of those online libraries will not be understood (or retained)
 with this version.
+</note>
+<note version="8.3" severity="warning">
+Since Version 8.3, EAGLE supports Fusion synchronisation.
+This feature will not be available in this version and saving
+the document will break the link to the Fusion PCB feature.
 </note>
 <note version="8.3" severity="warning">
 Since Version 8.3, EAGLE supports URNs for individual library
