@@ -1,7 +1,7 @@
 # Schematic
 ![Schematic](images/schematic.png)
 
-# HixButton - Hardware
+# PCB
 | Top                                 | Bottom                                 |
 |-------------------------------------|----------------------------------------|
 | ![PCB top view](images/pcb_top.png) | ![PCB bottom view](images/pcb_bot.png) |
