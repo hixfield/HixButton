@@ -1,3 +1,6 @@
+# Schematic
+![Schematic](images/schematic.png)
+
 # HixButton - Hardware
 | Top                                 | Bottom                                 |
 |-------------------------------------|----------------------------------------|
@@ -7,7 +10,3 @@
 
 # BOM
 TBD
-
-# Schematic
-![Schematic](images/schematic.png)
-
