@@ -160,7 +160,7 @@
 <dimension x1="28.194" y1="57.15" x2="28.194" y2="77.267" x3="20.32" y3="67.2085" textsize="1.778" layer="152"/>
 <text x="68.072" y="75.184" size="1.778" layer="51">+</text>
 <text x="62.992" y="75.438" size="1.778" layer="51">-</text>
-<text x="53.594" y="58.547" size="0.762" layer="25" rot="R180">HixButton v1.0.0</text>
+<text x="53.594" y="58.547" size="0.762" layer="25" rot="R180">HixButton v1.1.0</text>
 <text x="83.439" y="76.835" size="0.762" layer="25" rot="R180">(C) 2020 HixField.com</text>
 </plain>
 <libraries>
