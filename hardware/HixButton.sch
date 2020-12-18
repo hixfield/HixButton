@@ -19703,7 +19703,7 @@ Source: www.kingbright.com</description>
 </class>
 <class number="1" name="power" width="0.508" drill="0.254">
 </class>
-<class number="2" name="signal" width="0.254" drill="0">
+<class number="2" name="signal" width="0.254" drill="0.127">
 </class>
 </classes>
 <parts>
