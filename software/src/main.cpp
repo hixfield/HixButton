@@ -263,7 +263,7 @@ bool shouldGoToSleep(void)
         return g_accessPointTimeout.isExpired();
     }
     //not running in AP mode then its the setting
-    return !g_pinStayAwake.isHigh();
+    return g_pinStayAwake.isHigh();
 }
 
 void loop(void)

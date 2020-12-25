@@ -1,3 +1,9 @@
+# Get an impression :-)
+| ![PCB top view](images/paste_applied.jpg) | ![PCB bottom view](images/top_soldered.jpg) | ![PCB bottom view](images/bot_soldered.jpg) |
+|---|---|---|
+|solder paste applied|after headgun: soldered!|and bottom too|
+| ![PCB bottom view](images/it_works.jpg)   | ![PCB bottom view](images/stencel.jpg) | ![PCB bottom view](images/stencel_and_pcb.jpg) |
+|it works!|also ordered solder stencel|stencel and pcb|
 # Schematic
 ![Schematic](images/schematic.png)
 
