@@ -4,6 +4,12 @@
 |solder paste applied|after headgun: soldered!|and bottom too|
 | ![PCB bottom view](images/it_works.jpg)   | ![PCB bottom view](images/stencel.jpg) | ![PCB bottom view](images/stencel_and_pcb.jpg) |
 |it works!|also ordered solder stencel|stencel and pcb|
+
+# 3D printed case
+You can find all requird files on thingiverse.
+
+[![Case asembly](https://img.youtube.com/vi/lKFYbrJro3M/0.jpg)](https://youtu.be/lKFYbrJro3M)
+
 # Schematic
 ![Schematic](images/schematic.png)
 
