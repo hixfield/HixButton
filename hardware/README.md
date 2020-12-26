@@ -4,9 +4,10 @@
 |solder paste applied|after headgun: soldered!|and bottom too|
 | ![PCB bottom view](images/it_works.jpg)   | ![PCB bottom view](images/stencel.jpg) | ![PCB bottom view](images/stencel_and_pcb.jpg) |
 |it works!|also ordered solder stencel|stencel and pcb|
-
+| ![Case ESP side](images/case_esp_side.jpg)   | ![Case header side](images/case_header_side.jpg) | ![Case](images/case.jpg) |
+|Case ESP side|Case header side|Fuly assembled|
 # 3D printed case
-You can find all requird files on thingiverse.
+You can find all requird `stl`files on [thingiverse](https://www.thingiverse.com/thing:4697256) (and in the `case` folder of this repo)
 
 [![Case asembly](https://img.youtube.com/vi/lKFYbrJro3M/0.jpg)](https://youtu.be/lKFYbrJro3M)
 

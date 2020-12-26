@@ -5,6 +5,15 @@
 A simple fully designed ESP8266 WIFI button.
 With schematic, PCB layout and the 3D printed case.
 
+[See it on thingiverse](https://www.thingiverse.com/thing:4697256)
+
+[See it on youtube](https://youtu.be/lKFYbrJro3M)
+
+| ![PCB top view](hardware/images/top_soldered.jpg) | ![PCB bottom view](hardware/images/bot_soldered.jpg) | ![PCB bottom view](hardware/images/it_works.jpg) |
+|---|---|---|
+| ![Case ESP side](hardware/images/case_esp_side.jpg)   | ![Case header side](hardware/images/case_header_side.jpg) | ![Case](hardware/images/case.jpg) |
+|Case ESP side|Case header side|Fuly assembled|
+
 ## Features
 
 - Powered by a single LiFePo4 battery
