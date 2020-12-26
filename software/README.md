@@ -44,7 +44,11 @@
 * if you open the serial monitor the device outputs a lot of info
 
 ## WIFI setup and configuration
+### force stay awake
 * if you want to configure the device, and prevent it from going to sleep when pressing the button, close the solder jumper `STAYAWAKE` then the configuration interface will always be active. The RGB LED will turn magenta to indicate the jumper is closed. **You have to remove this solder jumper after config because this will drain the battery very quickly!**. 
+* the device has mDNS enabled and will listen for `{room}_hixbutton_{tag}` where `{room}` and `{tag}` are defined in configuration (with defaults configured in `secret.cpp`)
+
+### automatic access point creation
 * when you press the button and the device cannot connect using its stored WIFI settings the RGB led will turn white and it will enable an access point (AP)
 * using a computer, tablet, phone... connect to the access point and enter the IP address of the device (192.168.4.1)
 * you will now see the web configuration screen that you can use the configure all settings:

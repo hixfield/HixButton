@@ -76,6 +76,11 @@ int HixConfig::getUDPPort(void) {
     return data.nUDPPort;
 }
 
+char* HixConfig::getClientName(void) {
+    sprintf(m_szClientName, "%s_%s_%s", getRoom(), getDeviceType(), getDeviceTag());
+    return m_szClientName;
+}
+
 void HixConfig::setConfigPassword(const char * szValue) {
     memset(data.szConfigPassword, 0, sizeof(data.szConfigPassword));
     strncpy(data.szConfigPassword, szValue, sizeof(data.szConfigPassword) - 1);

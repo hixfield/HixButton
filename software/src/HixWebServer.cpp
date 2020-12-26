@@ -1,9 +1,10 @@
 #include "HixWebServer.h"
-#include "secret.h"
-#include <FS.h>
 
-HixWebServer::HixWebServer(HixConfig & config) : ESP8266WebServer(80),
-                                                 m_config(config) {
+#include <FS.h>
+#include "secret.h"
+
+HixWebServer::HixWebServer(HixConfig& config) : ESP8266WebServer(80),
+                                                m_config(config) {
     onNotFound([this]() {
         if (!handleFileRead(uri()))
             send(404, "text/plain", "404: Not Found");
@@ -81,7 +82,6 @@ bool HixWebServer::handleFileRead(String path) {
     return false;
 }
 
-
 bool HixWebServer::handlePostConfig(void) {
     //check password
     if (arg("password") != m_config.getConfigPassword()) {
@@ -107,14 +107,15 @@ bool HixWebServer::handlePostConfig(void) {
     //write to epprom
     m_config.commitToEEPROM();
     //send reply
-    const char * szSavedHtml = "/saved.html";
+    const char* szSavedHtml = "/saved.html";
     File file = SPIFFS.open(szSavedHtml, "r");
     streamFile(file, getContentType(String(szSavedHtml)));
     file.close();
-    //errase wifi settings
-    WiFi.disconnect();
     //reset!
     delay(1000);
+    //errase wifi settings
+    WiFi.disconnect();
+    //reset device
     ESP.reset();
     return true;
 }

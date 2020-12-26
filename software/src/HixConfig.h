@@ -9,6 +9,7 @@ class HixConfig
 private:
   //base address for epprom
   const int m_nEPPROMBaseAddress = 0;
+  char m_szClientName[255];
   //hilds the data
   struct
   {
@@ -39,7 +40,7 @@ public:
   HixConfig();
   //getters
   const char *getDeviceType(void) { return "HixButton"; };
-  const char *getDeviceVersion(void) { return "1.1.0"; };
+  const char *getDeviceVersion(void) { return "1.1.1"; };
 
   const char *getConfigPassword(void);
   const char *getWifiSsid(void);
@@ -58,6 +59,8 @@ public:
 
   const char *getUDPServerAsString(void);
   int getUDPPort(void);
+
+  char * getClientName(void);
 
   //setters
   void setConfigPassword(const char *szValue);

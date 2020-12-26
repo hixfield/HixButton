@@ -1,17 +1,19 @@
-#include <ESP8266WiFi.h>
-#include <WiFiClient.h>
-#include <WiFiUdp.h>
-#include <ArduinoOTA.h>
-#include <FS.h>
+#include <Adafruit_NeoPixel.h>
 #include <Arduino.h>
 #include <ArduinoJson.h>
+#include <ArduinoOTA.h>
+#include <ESP8266WiFi.h>
+#include <ESP8266mDNS.h>
+#include <FS.h>
 #include <HixMQTTBase.h>
 #include <HixPinDigitalInput.h>
 #include <HixTimeout.h>
+#include <WiFiClient.h>
+#include <WiFiUdp.h>
+
+#include "HixConfig.h"
 #include "HixWebServer.h"
 #include "secret.h"
-#include "HixConfig.h"
-#include <Adafruit_NeoPixel.h>
 
 ADC_MODE(ADC_VCC);
 
@@ -20,9 +22,8 @@ HixWebServer g_webServer(g_config);
 HixPinDigitalInput g_pinStayAwake(4);
 WiFiUDP g_udp;
 Adafruit_NeoPixel g_rgbLed = Adafruit_NeoPixel(1, 5, NEO_GRB + NEO_KHZ400);
-HixTimeout g_accessPointTimeout(10*60*1000);
-enum Color : uint32_t
-{
+HixTimeout g_accessPointTimeout(10 * 60 * 1000);
+enum Color : uint32_t {
     black = 0x000000,
     white = 0xFFFFFF,
     red = 0xFF0000,
@@ -32,8 +33,7 @@ enum Color : uint32_t
     magenta = 0xFF00FF
 };
 
-void setLedColor(Color color, u32_t nDimFactor = 16)
-{
+void setLedColor(Color color, u32_t nDimFactor = 16) {
     //make base colors
     u32_t nR = color >> 16;
     u32_t nG = (color & 0x00FF00) >> 8;
@@ -48,22 +48,20 @@ void setLedColor(Color color, u32_t nDimFactor = 16)
     g_rgbLed.show();
 }
 
-void resetWithMessage(const char *szMessage)
-{
+void resetWithMessage(const char *szMessage) {
     Serial.println(szMessage);
     delay(2000);
     ESP.reset();
 }
 
 // this is accessed when the initial run fails to connect because no (or old) credentials
-bool launchSlowConnect()
-{
+bool launchSlowConnect() {
     Serial.println("No (or wrong) saved WiFi credentials. Doing a fresh connect.");
     // persistent and autoconnect should be true by default, but lets make sure.
     if (!WiFi.getAutoConnect())
-        WiFi.setAutoConnect(true); // autoconnect from saved credentials
+        WiFi.setAutoConnect(true);  // autoconnect from saved credentials
     if (!WiFi.getPersistent())
-        WiFi.persistent(true); // save the wifi credentials to flash
+        WiFi.persistent(true);  // save the wifi credentials to flash
     // Note the two forms of WiFi.begin() below. If the first version is used
     // then no wifi-scan required as the RF channel and the AP mac-address are provided.
     // so next boot, all this info is saved for a fast connect.
@@ -72,12 +70,10 @@ bool launchSlowConnect()
     WiFi.begin(g_config.getWifiSsid(), g_config.getWifiPassword());
     // now wait for good connection, or reset
     int counter = 0;
-    while (WiFi.status() != WL_CONNECTED)
-    {
+    while (WiFi.status() != WL_CONNECTED) {
         delay(500);
         Serial.print(".");
-        if (++counter > 20)
-        {
+        if (++counter > 20) {
             // allow up to 10-sec to connect to wifi
             Serial.println();
             Serial.println("Error connecting WiFi");
@@ -89,19 +85,16 @@ bool launchSlowConnect()
     return true;
 }
 
-float getVcc(void)
-{
+float getVcc(void) {
     const int numberOfSamples = 100;
     float sum = 0;
-    for (int i = 0; i < numberOfSamples; i++)
-    {
+    for (int i = 0; i < numberOfSamples; i++) {
         sum += (float)ESP.getVcc() / (float)1024;
     }
     return sum / (float)numberOfSamples;
 }
 
-void sendUDPpacket()
-{
+void sendUDPpacket() {
     //create payload
     DynamicJsonDocument doc(500);
     doc["device_type"] = g_config.getDeviceType();
@@ -126,24 +119,20 @@ void sendUDPpacket()
     Serial.println(jsonString);
 }
 
-void setLedForVcc()
-{
+void setLedForVcc() {
     float vcc = getVcc();
-    if (vcc < 2.60)
-    {
+    if (vcc < 2.60) {
         setLedColor(Color::red);
         return;
     }
-    if (vcc < 2.8)
-    {
+    if (vcc < 2.8) {
         setLedColor(Color::orange);
         return;
     }
     setLedColor(Color::green);
 }
 
-bool setupAccessPoint(void)
-{
+bool setupAccessPoint(void) {
     //create ssid name
     String ssid("HixButton_");
     ssid += g_config.getRoom();
@@ -155,13 +144,11 @@ bool setupAccessPoint(void)
     return WiFi.softAP(ssid);
 }
 
-bool accessPointIsActive(void)
-{
+bool accessPointIsActive(void) {
     return WiFi.softAPSSID() != NULL;
 }
 
-void setup(void)
-{
+void setup(void) {
     Serial.begin(115200);
     Serial.println();
     Serial.println("Setting up stay awake pin");
@@ -173,21 +160,17 @@ void setup(void)
     //we set color here, for some strange reasen calling ESP.getVcc disconnects the wifi if we do it after wifi connection...
     setLedForVcc();
     //disable the accesspoint if it runs
-    if (accessPointIsActive())
-    {
+    if (accessPointIsActive()) {
         Serial.println("Disabling soft access point");
         WiFi.softAPdisconnect();
     }
     //go for wifi connection
     Serial.println("Connecting WiFi");
     //check dhsp or not
-    if (g_config.getFixedIPEnabled())
-    {
+    if (g_config.getFixedIPEnabled()) {
         // a significant part of the SPEED GAIN is by using a static IP config
         WiFi.config(g_config.getIPAddress(), g_config.getGateway(), g_config.getSubnetMask());
-    }
-    else
-    {
+    } else {
         //this is using dhcp
         WiFi.begin();
     }
@@ -195,32 +178,25 @@ void setup(void)
     // The 1st time sketch runs, this will time-out and THEN it accesses WiFi.connect().
     // After the first time (and a successful connect), next time it connects very fast
     int counter = 0;
-    while (WiFi.status() != WL_CONNECTED)
-    {
-        delay(5); // use small delays, NOT 500ms
+    while (WiFi.status() != WL_CONNECTED) {
+        delay(5);  // use small delays, NOT 500ms
         if (++counter > 1000)
-            break; // 5 sec timeout
+            break;  // 5 sec timeout
     }
     //if timed-out, connect the slow-way
-    if (counter > 1000)
-    {
-        if (!launchSlowConnect())
-        {
-            if (!setupAccessPoint())
-            {
+    if (counter > 1000) {
+        if (!launchSlowConnect()) {
+            if (!setupAccessPoint()) {
                 resetWithMessage("Could not setup a software access point");
             }
         }
     }
     //debug logging
-    if (accessPointIsActive())
-    {
+    if (accessPointIsActive()) {
         Serial.print("My access point IP: ");
         Serial.println(WiFi.softAPIP());
         setLedColor(Color::white);
-    }
-    else
-    {
+    } else {
         //some debugging info
         Serial.print("Connected to: ");
         Serial.println(WiFi.SSID());
@@ -235,6 +211,12 @@ void setup(void)
         //send our packet
         sendUDPpacket();
     }
+    //setup mdns responder
+    Serial.print(F("Setting up mDNS on "));
+    Serial.println(g_config.getClientName());
+    if(!MDNS.begin(g_config.getClientName())) {
+        Serial.print(F("Error setting up mDNS responder"));
+    }
     //setup the server
     Serial.println(F("Setting up web server"));
     g_webServer.begin();
@@ -248,14 +230,11 @@ void setup(void)
     Serial.println(F("Setup complete, looping..."));
 }
 
-bool shouldGoToSleep(void)
-{
+bool shouldGoToSleep(void) {
     //if running in access point
-    if (accessPointIsActive())
-    {
+    if (accessPointIsActive()) {
         //if still people connected we don't disconnect
-        if (WiFi.softAPgetStationNum())
-        {
+        if (WiFi.softAPgetStationNum()) {
             //Serial.println("Somebody connected");
             return false;
         }
@@ -267,10 +246,9 @@ bool shouldGoToSleep(void)
     return g_pinStayAwake.isHigh();
 }
 
-void loop(void)
-{
-    if (shouldGoToSleep())
-    {
+void loop(void) {
+    MDNS.update();
+    if (shouldGoToSleep()) {
         //debug log
         Serial.println("Going to sleep...");
         //switch off let
@@ -279,7 +257,7 @@ void loop(void)
         ESP.deepSleep(0);
     }
     //if we are staying awake tell it via the led!
-    if(g_pinStayAwake.isLow()) {
+    if (g_pinStayAwake.isLow()) {
         setLedColor(Color::magenta);
     }
     //allowed to run so do our processing
