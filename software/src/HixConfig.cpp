@@ -158,8 +158,8 @@ void HixConfig::commitDefaults(void) {
     setSubnetMask(Secret::MY_MASK);
     setGateway(Secret::MY_GATEWAY);
     setOTAEnabled(Secret::OTA_ENABLED);
-    setRoom("test_room");
-    setDeviceTag("test_tag");
+    setRoom(Secret::MY_ROOM);
+    setDeviceTag(Secret::MY_DEVICE_TAG);
     setUDPServer(Secret::UDP_SERVER);
     setUDPPort(Secret::UDP_PORT);
     commitToEEPROM();

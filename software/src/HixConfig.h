@@ -39,7 +39,7 @@ public:
   HixConfig();
   //getters
   const char *getDeviceType(void) { return "HixButton"; };
-  const char *getDeviceVersion(void) { return "1.0.0"; };
+  const char *getDeviceVersion(void) { return "1.1.0"; };
 
   const char *getConfigPassword(void);
   const char *getWifiSsid(void);

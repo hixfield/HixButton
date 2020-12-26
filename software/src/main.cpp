@@ -28,7 +28,8 @@ enum Color : uint32_t
     red = 0xFF0000,
     green = 0x00FF00,
     blue = 0x0000FF,
-    orange = 0xFF8C00
+    orange = 0xFF8C00,
+    magenta = 0xFF00FF
 };
 
 void setLedColor(Color color, u32_t nDimFactor = 16)
@@ -276,6 +277,10 @@ void loop(void)
         setLedColor(Color::black);
         //go into deepsleep!
         ESP.deepSleep(0);
+    }
+    //if we are staying awake tell it via the led!
+    if(g_pinStayAwake.isLow()) {
+        setLedColor(Color::magenta);
     }
     //allowed to run so do our processing
     g_webServer.handleClient();
