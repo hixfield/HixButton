@@ -50,6 +50,7 @@
 
 ### automatic access point creation
 * when you press the button and the device cannot connect using its stored WIFI settings the RGB led will turn white and it will enable an access point (AP)
+* after 10 minutes and if nobody is connected to the AP, the device goes to sleep again
 * using a computer, tablet, phone... connect to the access point and enter the IP address of the device (192.168.4.1)
 * you will now see the web configuration screen that you can use the configure all settings:
 ![config web interface](images/config.png)
