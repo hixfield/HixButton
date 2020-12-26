@@ -16,7 +16,7 @@ With schematic, PCB layout and the 3D printed case.
 
 ## Features
 
-- Powered by a single LiFePo4 battery
+- Powered by a single LiFePo4 battery (one charge lasts > 1 year)
 - Onboarding charging circuit based on CN3058E powered via the FTDI connector's 5V
 - Charging current set as `I = 1.205/R3` (schematic lists 5.6K which is approx 200mA to keep things cool)
 - Onboard power supervisor to make sure ESP does not boot (with garbage) if batery is to low
