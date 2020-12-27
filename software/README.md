@@ -66,6 +66,7 @@ Datagram is one json document containing the following information:
    "room":"test_room",
    "wifi_ssid":"GEMIC_2.4Ghz",
    "wifi_rssi":-78,
+   "wifi_mac": "E0:98:06:84:9B:F6",
    "vcc":3.42208
 }
 ```

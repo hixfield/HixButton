@@ -103,6 +103,7 @@ void sendUDPpacket() {
     doc["room"] = g_config.getRoom();
     doc["wifi_ssid"] = WiFi.SSID();
     doc["wifi_rssi"] = WiFi.RSSI();
+    doc["wifi_mac"] = WiFi.macAddress();
     doc["vcc"] = getVcc();
     //to string
     String jsonString;
