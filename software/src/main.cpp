@@ -100,6 +100,7 @@ void sendUDPpacket() {
     doc["device_type"] = g_config.getDeviceType();
     doc["device_version"] = g_config.getDeviceVersion();
     doc["device_tag"] = g_config.getDeviceTag();
+    doc["device_build_timestamp"] = g_config.getDeviceBuildTimestamp();
     doc["room"] = g_config.getRoom();
     doc["wifi_ssid"] = WiFi.SSID();
     doc["wifi_rssi"] = WiFi.RSSI();

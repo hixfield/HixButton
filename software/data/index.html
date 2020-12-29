@@ -2,7 +2,10 @@
 <html>
 
 <body>
-    <h1>||DEVICE_TYPE|| ||DEVICE_VERSION||</h1>
+    <h1>||DEVICE_TYPE||</h1>
+    v||DEVICE_VERSION||<br>
+    ||BUILD_TIMESTAMP||
+    <h2>Configuration</h2>
     <form action="/postconfig" method="post">
         <table>
             <tr>
@@ -20,7 +23,7 @@
             <tr>
                 <td>use fixed IP address</td>
                 <td><input type="checkbox" name="fixed_ip_enabled" value="true" ||FIXED_IP_ENABLED||></td>
-            </tr>   
+            </tr>
             <tr>
                 <td>fixed IP address</td>
                 <td><input type="text" name="ip" value="||IP||"> </td>
@@ -36,7 +39,7 @@
             <tr>
                 <td>OTA enabled</td>
                 <td><input type="checkbox" name="ota_enabled" value="true" ||OTA_ENABLED||></td>
-            </tr>   
+            </tr>
             <tr>
                 <td>Room</td>
                 <td><input type="text" name="room" value="||ROOM||"> </td>
@@ -52,12 +55,22 @@
             <tr>
                 <td>UDP Port</td>
                 <td><input type="text" name="udp_port" value="||UDP_PORT||"> </td>
-            </tr>         
+            </tr>
         </table>
         <br>
         <input type="submit" value="Submit">
     </form>
-
+    <h2>ESP8266 info</h2>
+    <table>
+        <tr>
+            <td width="200">Reset reason</td>
+            <td>||RESET_REASON||</td>
+        </tr>
+        <tr>
+            <td width="200">Reset info</td>
+            <td>||RESET_INFO||</td>
+        </tr>
+    </table>
 </body>
 
 </html>

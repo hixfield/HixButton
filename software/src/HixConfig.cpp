@@ -1,6 +1,8 @@
 #include "HixConfig.h"
-#include "secret.h"
+
 #include <EEPROM.h>
+
+#include "secret.h"
 
 HixConfig::HixConfig() {
     EEPROM.begin(512);
@@ -10,15 +12,19 @@ HixConfig::HixConfig() {
     }
 }
 
-const char * HixConfig::getConfigPassword(void) {
+const char* HixConfig::getDeviceBuildTimestamp(void) {
+    return __DATE__ " " __TIME__;
+}
+
+const char* HixConfig::getConfigPassword(void) {
     return data.szConfigPassword;
 }
 
-const char * HixConfig::getWifiSsid(void) {
+const char* HixConfig::getWifiSsid(void) {
     return data.szWifiSsid;
 }
 
-const char * HixConfig::getWifiPassword(void) {
+const char* HixConfig::getWifiPassword(void) {
     return data.szWifiPassword;
 }
 
@@ -32,7 +38,7 @@ IPAddress HixConfig::getIPAddress(void) {
     return address;
 }
 
-const char * HixConfig::getIPAddressAsString(void) {
+const char* HixConfig::getIPAddressAsString(void) {
     return data.szIPAddress;
 }
 
@@ -42,7 +48,7 @@ IPAddress HixConfig::getSubnetMask(void) {
     return address;
 }
 
-const char * HixConfig::getSubnetMaskAsString(void) {
+const char* HixConfig::getSubnetMaskAsString(void) {
     return data.szSubnetMask;
 }
 
@@ -52,7 +58,7 @@ IPAddress HixConfig::getGateway(void) {
     return address;
 }
 
-const char * HixConfig::getGatewayAsString(void) {
+const char* HixConfig::getGatewayAsString(void) {
     return data.szGateway;
 }
 
@@ -60,15 +66,15 @@ bool HixConfig::getOTAEnabled(void) {
     return data.bOTAEnabled;
 }
 
-const char * HixConfig::getRoom(void) {
+const char* HixConfig::getRoom(void) {
     return data.szRoom;
 }
 
-const char * HixConfig::getDeviceTag(void) {
+const char* HixConfig::getDeviceTag(void) {
     return data.szDeviceTag;
 }
 
-const char * HixConfig::getUDPServerAsString(void) {
+const char* HixConfig::getUDPServerAsString(void) {
     return data.szUDPServer;
 }
 
@@ -81,17 +87,17 @@ char* HixConfig::getClientName(void) {
     return m_szClientName;
 }
 
-void HixConfig::setConfigPassword(const char * szValue) {
+void HixConfig::setConfigPassword(const char* szValue) {
     memset(data.szConfigPassword, 0, sizeof(data.szConfigPassword));
     strncpy(data.szConfigPassword, szValue, sizeof(data.szConfigPassword) - 1);
 }
 
-void HixConfig::setWifiSsid(const char * szValue) {
+void HixConfig::setWifiSsid(const char* szValue) {
     memset(data.szWifiSsid, 0, sizeof(data.szWifiSsid));
     strncpy(data.szWifiSsid, szValue, sizeof(data.szWifiSsid) - 1);
 }
 
-void HixConfig::setWifiPassword(const char * szValue) {
+void HixConfig::setWifiPassword(const char* szValue) {
     memset(data.szWifiPassword, 0, sizeof(data.szWifiPassword));
     strncpy(data.szWifiPassword, szValue, sizeof(data.szWifiPassword) - 1);
 }
@@ -100,17 +106,17 @@ void HixConfig::setFixedIPEnabled(bool bValue) {
     data.bFixedIPEnabled = bValue;
 }
 
-void HixConfig::setIPAddress(const char * szValue) {
+void HixConfig::setIPAddress(const char* szValue) {
     memset(data.szIPAddress, 0, sizeof(data.szIPAddress));
     strncpy(data.szIPAddress, szValue, sizeof(data.szIPAddress) - 1);
 }
 
-void HixConfig::setSubnetMask(const char * szValue) {
+void HixConfig::setSubnetMask(const char* szValue) {
     memset(data.szSubnetMask, 0, sizeof(data.szSubnetMask));
     strncpy(data.szSubnetMask, szValue, sizeof(data.szSubnetMask) - 1);
 }
 
-void HixConfig::setGateway(const char * szValue) {
+void HixConfig::setGateway(const char* szValue) {
     memset(data.szGateway, 0, sizeof(data.szGateway));
     strncpy(data.szGateway, szValue, sizeof(data.szGateway) - 1);
 }
@@ -119,23 +125,23 @@ void HixConfig::setOTAEnabled(bool bValue) {
     data.bOTAEnabled = bValue;
 }
 
-void HixConfig::setRoom(const char * szValue) {
+void HixConfig::setRoom(const char* szValue) {
     memset(data.szRoom, 0, sizeof(data.szRoom));
     strncpy(data.szRoom, szValue, sizeof(data.szRoom) - 1);
 }
 
-void HixConfig::setDeviceTag(const char * szValue) {
+void HixConfig::setDeviceTag(const char* szValue) {
     memset(data.szDeviceTag, 0, sizeof(data.szDeviceTag));
     strncpy(data.szDeviceTag, szValue, sizeof(data.szDeviceTag) - 1);
 }
 
-void HixConfig::setUDPServer(const char * szValue) {
+void HixConfig::setUDPServer(const char* szValue) {
     memset(data.szUDPServer, 0, sizeof(data.szUDPServer));
     strncpy(data.szUDPServer, szValue, sizeof(data.szUDPServer) - 1);
 }
 
 void HixConfig::setUDPPort(int nValue) {
-        data.nUDPPort = nValue;
+    data.nUDPPort = nValue;
 }
 
 void HixConfig::commitToEEPROM(void) {
@@ -145,9 +151,9 @@ void HixConfig::commitToEEPROM(void) {
 }
 
 unsigned long HixConfig::calculateCRC(void) {
-    unsigned char * crcData = (unsigned char *)&data;
-    size_t          size    = sizeof(data) - sizeof(data.crc);
-    unsigned long   crc     = 1234;
+    unsigned char* crcData = (unsigned char*)&data;
+    size_t size = sizeof(data) - sizeof(data.crc);
+    unsigned long crc = 1234;
     for (size_t index = 0; index < size; index++) {
         crc += crcData[index];
     }
@@ -170,7 +176,7 @@ void HixConfig::commitDefaults(void) {
     commitToEEPROM();
 }
 
-void HixConfig::replacePlaceholders(String & contents) {
+void HixConfig::replacePlaceholders(String& contents) {
     contents.replace("||DEVICE_TYPE||", getDeviceType());
     contents.replace("||DEVICE_VERSION||", getDeviceVersion());
 
@@ -178,13 +184,19 @@ void HixConfig::replacePlaceholders(String & contents) {
 
     contents.replace("||WIFI_SSID||", getWifiSsid());
     contents.replace("||WIFI_PWD||", getWifiPassword());
-    contents.replace("||FIXED_IP_ENABLED||", getFixedIPEnabled()? "checked":"");    
+    contents.replace("||FIXED_IP_ENABLED||", getFixedIPEnabled() ? "checked" : "");
     contents.replace("||IP||", getIPAddressAsString());
     contents.replace("||MASK||", getSubnetMaskAsString());
     contents.replace("||GATEWAY||", getGatewayAsString());
-    contents.replace("||OTA_ENABLED||", getOTAEnabled()? "checked":"");    
+    contents.replace("||OTA_ENABLED||", getOTAEnabled() ? "checked" : "");
     contents.replace("||ROOM||", getRoom());
     contents.replace("||DEVICE_TAG||", getDeviceTag());
     contents.replace("||UDP_SERVER||", getUDPServerAsString());
     contents.replace("||UDP_PORT||", String(getUDPPort()));
+
+    contents.replace("||RESET_REASON||", ESP.getResetReason());
+    contents.replace("||RESET_INFO||", ESP.getResetInfo());
+    contents.replace("||FREE_HEAP||", String(ESP.getFreeHeap()));
+    contents.replace("||FREE_STACK||", String(ESP.getFreeContStack()));
+    contents.replace("||BUILD_TIMESTAMP||", getDeviceBuildTimestamp());
 }
