@@ -26,7 +26,7 @@ You can find all requird `stl`files on [thingiverse](https://www.thingiverse.com
 |---|----------|-----------------------|------------------|
 |4  |100nF     |SMD 1206               |C1, C2, C3, C4    |
 |5  |100μF     |Tantalum SMD 1206      |C5, C6, C7, C8, C9|
-|4  |10K       |SMD 1206               |R1, R2, R10, R11  |
+|3  |10K       |SMD 1206               |R1, R2, R10       |
 |1  |1uF       |SMD 1206               |C10               |
 |1  |2.2K      |SMD 1206               |R12               |
 |1  |330       |SMD 1206               |R4                |
