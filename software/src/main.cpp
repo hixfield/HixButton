@@ -12,6 +12,7 @@
 #include <WiFiUdp.h>
 
 #include "HixConfig.h"
+#include "HixRGBLed.h"
 #include "HixWebServer.h"
 #include "secret.h"
 
@@ -21,32 +22,11 @@ HixConfig g_config;
 HixWebServer g_webServer(g_config);
 HixPinDigitalInput g_pinStayAwake(4);
 WiFiUDP g_udp;
-Adafruit_NeoPixel g_rgbLed = Adafruit_NeoPixel(1, 5, NEO_GRB + NEO_KHZ400);
+char g_szUdpPacketBuffer[512];
+bool g_bUdpPacketReceived = false;
+HixRGBLed g_rgbLed(5, NEO_GRB + NEO_KHZ400, 25);
 HixTimeout g_accessPointTimeout(10 * 60 * 1000);
-enum Color : uint32_t {
-    black = 0x000000,
-    white = 0xFFFFFF,
-    red = 0xFF0000,
-    green = 0x00FF00,
-    blue = 0x0000FF,
-    orange = 0xFF8C00,
-    magenta = 0xFF00FF
-};
-
-void setLedColor(Color color, u32_t nDimFactor = 16) {
-    //make base colors
-    u32_t nR = color >> 16;
-    u32_t nG = (color & 0x00FF00) >> 8;
-    u32_t nB = color & 0x0000FF;
-    //take dimming into account
-    nR /= nDimFactor;
-    nG /= nDimFactor;
-    nB /= nDimFactor;
-    //reassemble
-    u32_t nDimmedColor = (nR << 16) | (nG << 8) | nB;
-    g_rgbLed.setPixelColor(0, nDimmedColor);
-    g_rgbLed.show();
-}
+HixTimeout g_sleepTimeout(3000);
 
 void resetWithMessage(const char *szMessage) {
     Serial.println(szMessage);
@@ -123,15 +103,10 @@ void sendUDPpacket() {
 
 void setLedForVcc() {
     float vcc = getVcc();
-    if (vcc < 2.60) {
-        setLedColor(Color::red);
-        return;
+    if (vcc < 2.80) {
+        g_rgbLed.setColor(HixColor::red);
+        g_rgbLed.setAnimate(HixLedAnimation::fastBlink);
     }
-    if (vcc < 2.8) {
-        setLedColor(Color::orange);
-        return;
-    }
-    setLedColor(Color::green);
 }
 
 bool setupAccessPoint(void) {
@@ -168,7 +143,7 @@ void setup(void) {
     }
     //go for wifi connection
     Serial.println("Connecting WiFi");
-    //check dhsp or not
+    //check dhcp or not
     if (g_config.getFixedIPEnabled()) {
         // a significant part of the SPEED GAIN is by using a static IP config
         WiFi.config(g_config.getIPAddress(), g_config.getGateway(), g_config.getSubnetMask());
@@ -193,11 +168,16 @@ void setup(void) {
             }
         }
     }
+    //setup our UDP service
+    Serial.print(F("Setting up UDP listener on port "));
+    Serial.println(g_config.getUDPPort());
+    g_udp.begin(g_config.getUDPPort());
     //debug logging
     if (accessPointIsActive()) {
         Serial.print("My access point IP: ");
         Serial.println(WiFi.softAPIP());
-        setLedColor(Color::white);
+        g_rgbLed.setColor(HixColor::white);
+        g_rgbLed.setAnimate(HixLedAnimation::fadeInOut);
     } else {
         //some debugging info
         Serial.print("Connected to: ");
@@ -216,7 +196,7 @@ void setup(void) {
     //setup mdns responder
     Serial.print(F("Setting up mDNS on "));
     Serial.println(g_config.getClientName());
-    if(!MDNS.begin(g_config.getClientName())) {
+    if (!MDNS.begin(g_config.getClientName())) {
         Serial.print(F("Error setting up mDNS responder"));
     }
     //setup the server
@@ -226,8 +206,8 @@ void setup(void) {
     Serial.println(F("Setting up SPIFFS"));
     if (!SPIFFS.begin())
         resetWithMessage("SPIFFS initialization failed, resetting");
-    //give some time for message sending in background
-    delay(1250);
+    //start our sleep timeout
+    g_sleepTimeout.restart();
     //all done!
     Serial.println(F("Setup complete, looping..."));
 }
@@ -240,28 +220,61 @@ bool shouldGoToSleep(void) {
             //Serial.println("Somebody connected");
             return false;
         }
-        //Serial.println(g_accessPointTimeout.timeLeftMs()/1000);
         //if no body is connected check timeout
         return g_accessPointTimeout.isExpired();
     }
     //not running in AP mode then its the setting
-    return g_pinStayAwake.isHigh();
+    if (g_pinStayAwake.isLow()) return false;
+    //no API, no pin stay awake the use timeout timer
+    return g_sleepTimeout.isExpired();
 }
 
 void loop(void) {
+    //handle any web sessions
+    g_webServer.handleClient();
+    //handle the mDNS
     MDNS.update();
+    //should we sleep?
     if (shouldGoToSleep()) {
         //debug log
         Serial.println("Going to sleep...");
         //switch off let
-        setLedColor(Color::black);
+        g_rgbLed.setColor(HixColor::black);
+        g_rgbLed.setAnimate(HixLedAnimation::off);
         //go into deepsleep!
         ESP.deepSleep(0);
     }
     //if we are staying awake tell it via the led!
-    if (g_pinStayAwake.isLow()) {
-        setLedColor(Color::magenta);
+    if (g_pinStayAwake.isLow() && g_sleepTimeout.isExpired() && !g_bUdpPacketReceived) {
+        g_rgbLed.setColor(HixColor::magenta);
+        g_rgbLed.setAnimate(HixLedAnimation::fadeInOut);
     }
-    //allowed to run so do our processing
-    g_webServer.handleClient();
+    //did we receive an udp packet?
+    if (g_udp.parsePacket()) {
+        g_bUdpPacketReceived = true;
+        //make sure our buffer is zero terminated
+        memset(g_szUdpPacketBuffer, 0, sizeof(g_szUdpPacketBuffer));
+        //read in the packet
+        g_udp.read(g_szUdpPacketBuffer, sizeof(g_szUdpPacketBuffer) - 1);
+        //print debug stuff
+        Serial.println("Received UDP packet:");
+        Serial.println(g_szUdpPacketBuffer);
+        //parse packet
+        DynamicJsonDocument doc(512);
+        deserializeJson(doc, g_szUdpPacketBuffer);
+        const char *szLedColorRGBHex = doc["ledColorRGBHex"];
+        unsigned long ulSleepDelayMs = doc["sleepDelayMs"];
+        //check values
+        if (szLedColorRGBHex != NULL) {
+            Serial.println(szLedColorRGBHex);
+            g_rgbLed.setColor(szLedColorRGBHex);
+            if (g_pinStayAwake.isLow()) {
+                g_rgbLed.setAnimate(HixLedAnimation::fadeInOut);
+            } else {
+                g_rgbLed.setAnimate(HixLedAnimation::on);
+            }
+            //wait a few seconds longer...
+            g_sleepTimeout.updateTimeoutAndRestart(ulSleepDelayMs);
+        }
+    }
 }

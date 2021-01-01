@@ -39,7 +39,7 @@ class HixConfig {
     HixConfig();
     //getters
     const char *getDeviceType(void) { return "HixButton"; };
-    const char *getDeviceVersion(void) { return "1.1.3"; };
+    const char *getDeviceVersion(void) { return "1.1.4"; };
     const char *getDeviceBuildTimestamp(void);
 
     const char *getConfigPassword(void);
