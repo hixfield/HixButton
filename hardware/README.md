@@ -12,6 +12,9 @@ You can find all requird `stl`files on [thingiverse](https://www.thingiverse.com
 [![Case asembly](https://img.youtube.com/vi/lKFYbrJro3M/0.jpg)](https://youtu.be/lKFYbrJro3M)
 
 # Schematic
+
+- LiFePO4 charging current set as `I = 1.205/R3` (schematic lists 5.6K which is approx 200mA to keep things cool)
+ 
 ![Schematic](images/schematic.png)
 
 # PCB

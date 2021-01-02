@@ -8,10 +8,11 @@
 * when the button is pressed the device is reset
 * the different hardware components are configured quickly (serial baut rate, RGB led...)
 * the configuration is loaded (from EEPROM). This contains the WIFI settings.
-* the voltage of the battery is measured and based on that the RGB led is set to GREEN - ORANGE - RED (so the user sees if it needs to be recharged)
+* the voltage of the battery is measured and if to low the RGB led flashed red rapidly to sigbal low bat
 * the device now tries to connect to the WIFI
-* if the WIFI connection does not work, the RGB led turns white and the device is put in AP mode (see WIFI setup & configuration)
-* if WIFI is connected a UDP datagram is send to the configuration server (refer to Datagram contents)
+* if the WIFI connection does not work, the RGB led turns white / fading in-out and the device is put in AP mode (see WIFI setup & configuration)
+* if WIFI is connected a UDP datagram is send to the configuration server (refer to Datagram contents) containing lots of details also status battery
+* the device then waits for 2 seconds for receiving a datagram, if received its decoded to see if it contains a led color and duration. This is then use to set the RGB. -> very neat way to sigal simple status back from the server to the user!
 * if the device solder jumper "STAY AWAKE" is not closed, the device is put into deepsleep. This should be used for debuggin only (drains battery)!
 
 ## How to flash the device
@@ -55,7 +56,7 @@
 * you will now see the web configuration screen that you can use the configure all settings:
 ![config web interface](images/config.png)
 
-## Datagram contents
+## Send UDP datagram contents
 Datagram is one json document containing the following information:
 
 ```
@@ -73,3 +74,30 @@ Datagram is one json document containing the following information:
 * `device_tag` and `room` are configured (via secret.cpp for defaults or via the config inferface) and identify the device. If you have mulitple devices this is what you use to differentiate between tem
 * `wifi_rssi` gives an idea of the WIFI signal strenght
 * `vcc` is the voltage level of the battery. You can use this to raise an alarm (if < 2.65v typically) on the server side
+
+## Recieve UDP datagram contents
+- You must send a reply within 2 seconds to the device (otherwise its already in sleep and will not respond anymore)
+- You can see the color and duration for the RGB led:
+
+```
+{
+   "ledColorRGBHex":"FF0000",
+   "sleepDelayMs":3000
+}
+```
+# Usage with Node-RED
+I created 2 subflow components
+
+- HixButton press -> input for detecting button presses
+- HixButton status -> after press use this to post back RGB led color and duration to device
+
+Here is my main flow:
+
+![main flow](images/nodered_main.png)
+
+With configuration of both subflow properties (flow json underneath pictures):
+
+| Press                                                             | Status                                                              |
+|-------------------------------------------------------------------|---------------------------------------------------------------------|
+| ![hixbutton press properties](images/nodered_hixbutton_press.png) | ![hixbutton status properties](images/nodered_hixbutton_status.png) |
+| [hixbutton press flow json (cut and past in node-RED)](images/nodered_hixbutton_press.json) | [hixbutton status flow json (cut and past in node-RED)](images/nodered_hixbutton_status.json) |

@@ -18,12 +18,15 @@ With schematic, PCB layout and the 3D printed case.
 
 - Powered by a single LiFePo4 battery (one charge lasts > 1 year)
 - Onboarding charging circuit based on CN3058E powered via the FTDI connector's 5V
-- Charging current set as `I = 1.205/R3` (schematic lists 5.6K which is approx 200mA to keep things cool)
 - Onboard power supervisor to make sure ESP does not boot (with garbage) if batery is to low
-- Contains an RGB led (e.g. to signal battery status when pressed)
+- Contains an RGB led (used to signal status back from the server e.g. heating on or off, and locally also used to signal low battery condition)
+- Firmware sends a json formatted datagram (UDP)
+ * to any configurable server
+ * and optionally receives datagram back (UDP) to set status led (and its duration)
+ * sends over battery status so server can signal low bat conditions
+- Works great with Node-red e.g. running on Raspberry Pi
 - Solder jumper to keep module awake (during debugging)
 - Puts the ESP in a deep sleep after pressing the button to conserve battery power.
-- Firmware sends a json formatted datagram (UDP) to any configurable server (eg. nodered running on Raspi)
 - Fast WiFi connection establish techniques (e.g. fixed ip) to make button responsive
 - 3D printed finished case
 
